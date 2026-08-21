@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Erwin Ramos">
+    <meta http-equiv="refresh" content=""> <!--Enter how many seconds before refreshing-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables and List</title>
+    <link rel="icon" type="image/x-icon"
+      href="../media/images/urf.jpg">
+    <style>       
+      table, th, td {
+        border: 1px solid black;
+      }
+    </style>
+    <!--<style></style> is css-->
+  </head>
+  <body>
+    <h1>Favicon</h1> <!--Favorite Icon--> <!--.ico, .png, .jpeg, .svg, .gif-->
+    <h1>Table</h1>
+      <hr>
+      <h2>table, th (table head), td (table data), tr (table row)</h2>
+      <h2>Groupings, thead, tbody, tfoot</h2>
+
+      <table>
+        <thead> <!--Indicates start of table head-->
+          <tr>
+            <th>No.</th>
+            <th>Student Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </thead>
+        <tbody> <!--Indicates start of table body-->
+          <tr><!--Create Row-->
+            <td colspan="3">1</td> <!--colspan for column merge, rowspan for rowmerge-->
+            <td>Gorio</td>
+            <td>22</td>
+            <td>Female</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Gonzalo</td>
+            <td>18</td>
+            <td>Male</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Jay Nagwapo</td>
+            <td>18</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Gloria</td>
+            <td></td> <!--Leaves a blank cell-->
+            <td>Female</td>
+          </tr>
+        </tbody>
+
+      </table>
+    <h1>Lists</h1>
+      <h2>Ordered List, Unordered List, Description List</h2>
+
+      <h2>Grocery Items</h2>
+        <ol>
+          <li>Shampoo</li>
+          <li>Saba</li>
+          <li>Matcha</li>
+        </ol>
+        <h2>Unordered List</h2>
+          <ul>
+            <li>Giraffe</li>
+            <li>Baka</li>
+            <li>Gako</li>
+          </ul>
+        <h2>Description List</h2>
+          <dl>
+            <dt>Aircon</dt>
+            <dd>- Air Conditioning Unit</dd>
+            <dt>ISP</dt>
+            <dd>- Internet Service Provider</dd>
+          </dl>
+    <h1>Buttons</h1>
+          <button>Sample Button</button>
+          <button type="button" disabled>Disabled Button</button>
+          <button onclick="alert('This is an example of onclick alerts')"> <!--Remember to use single quotes within the alert message-->
+            Try Me
+          </button> 
+    
+    <h1>Media</h1>
+          
+          <h2>Image</h2>
+              <img src="../media/images/GT86 Landscape.jpg" width="50%">
+          <h2>Audio</h2>
+            <audio src="../media/audio/The Last Stand.mp3" controls></audio> <!--controls adds play, pause, playback speed, etc.-->
+          <h2>Video</h2>
+            <video src="../media/videos/Heihachi.mp4" controls width="50%"></video> <!--Can use autoplay after width, but browsers may introduce delay-->
+          <hr>
+            <video controls width="50%">                      <!--This format also works, and is better for readability/presentation of code-->                                                
+              <source src="../media/videos/Heihachi.mp4">     <!--This format also works, and is better for readability/presentation of code-->                                            
+            </video>                                          <!--This format also works, and is better for readability/presentation of code-->        
+    <h1>Links</h1>
+          <h2>Button</h2>
+            <a href="../pages/index_p4.html">
+              <button onclick="document.location='index_p4.html'"> 
+                Next Page                                          
+              </button>                                        
+            </a>
+          <h2>Image</h2>
+            <a href="../pages/index_p4.html">
+              <image src="../media/images/Stang.jpg" width="25%">
+            </a>
+  </body>
+</html>
