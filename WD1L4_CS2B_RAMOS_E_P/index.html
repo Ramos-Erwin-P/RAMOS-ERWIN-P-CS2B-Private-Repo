@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Grades</title>
+<style>
+/* Sample CSS - can be moved to a separate styles.css and linked with <link rel="stylesheet" href="styles.css"> */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 24px;
+  color: #1f2933;
+}
+h1, h2 {
+  color: #1d3557;
+}
+table {
+  border-collapse: collapse;
+  margin-bottom: 16px;
+  min-width: 320px;
+}
+th, td {
+  border: 1px solid #b8c1cc;
+  padding: 8px 14px;
+  text-align: left;
+}
+th {
+  background-color: #1d3557;
+  color: #ffffff;
+}
+tr:nth-child(even) td {
+  background-color: #f1f5f9;
+}
+button {
+  background-color: #1d3557;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #2a4a7a;
+}
+button:focus-visible {
+  outline: 3px solid #f4a261;
+  outline-offset: 2px;
+}
+#result {
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<h1>List of Enrolled Students</h1>
+<table>
+<tr>
+<th>Student Name</th>
+<th>Grade</th>
+</tr>
+<tr>
+<td>Anna Reyes</td>
+<td>92</td>
+</tr>
+<tr>
+<td>Ben Santos</td>
+<td>85</td>
+</tr>
+<tr>
+<td>Carla Cruz</td>
+<td>78</td>
+</tr>
+<tr>
+<td>David Lim</td>
+<td>97</td>
+</tr>
+<tr>
+<td>Ella Ramos</td>
+<td>74</td>
+</tr>
+</table>
+
+<button onclick="showGradeEquivalent()">Show Grade Equivalent</button>
+<div id="result"></div>
+<script src="js/script.js"></script>
+</body>
+</html>
