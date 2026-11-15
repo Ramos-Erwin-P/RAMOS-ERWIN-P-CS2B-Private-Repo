@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Erwin Ramos | Developer's Page</title>
+  <meta name="description" content="Portfolio of Your Name, a software developer building fast, readable, accessible software.">
+
+  <!-- Bootstrap CSS via JSDELIVER  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link href="rsc/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-nav">
+    <nav class="container d-flex align-items-center justify-content-between py-3" aria-label="Main">
+      <a class="brand" href="#top">Erwin Ramos</a>
+      <button class="nav-toggle d-md-none" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <ul class="nav-links list-unstyled m-0 collapse d-md-flex gap-4" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <p class="hero-role">Studying Full-stack developer</p>
+        <h1 id="hero-title" class="hero-title">Welcome to my developer stage. Get to know me here as you please.</h1>
+        <p class="hero-sub">Hi, I'm Erwin. I like to work on simple projects that make my life just a little bit better.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#projects" class="btn btn-accent btn-lg">See my projects</a>
+          <a href="#contact" class="btn btn-ghost btn-lg">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Photo Section-->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-md-5 col-lg-4">
+            <figure class="portrait m-0">
+              <img src="img/Portrait.png" alt="Portrait of Erwin" width="480" height="600">
+            </figure>
+          </div>
+          <div class="col-md-7 col-lg-8">
+            <h2 id="about-title" class="section-title">About me</h2>
+            <p class="lead-text">Starting 2025, I've been programming. Slowly developing my skills to eventually translate what I learned into actual programs.</p>
+            <p>Prior to taking computer science, I have had no background on anything close. I love this program for the sole reason that I grew up around computers.
+              Currently, I am making use mostly of Python, HTML, CSS, and JS as my core languages. I aim to be a full-stack developer soon.
+            </p>
+            <p class="mb-0">Outside of computer science, I like to partake in photography and cooking. Sometimes I cosplay as well, so you'll probably see me in conventions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design philosophy -->
+    <section id="philosophy" class="section section-tint" aria-labelledby="philosophy-title">
+      <div class="container">
+        <h2 id="philosophy-title" class="section-title">How I approach design</h2>
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <blockquote class="pull-quote">Our current technology is a means to an end. Every tiny optimization is a step towards convenience.</blockquote>
+          </div>
+          <div class="col-lg-7">
+            <dl class="principles mb-0">
+              <dt>Start with the person using it</dt>
+              <dd>Before even any ideation, I ask: who will use this? What are they trying to finish?</dd>
+
+              <dt>Keep it simple</dt>
+              <dd>Just like machinery, less moving parts means less things to go wrong.</dd>
+
+              <dt>Make it work for everyone</dt>
+              <dd>Keyboard navigation, readable contrast, and fast loading times are a must.</dd>
+
+              <dt>Continuous maintenance needs user connections</dt>
+              <dd>I believe users are the best form of a roadmap in terms of things to improve, add, or omit.</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title" class="section-title">My Projects</h2>
+        <div class="row g-4">
+
+          <article class="col-md-6 col-lg-4">
+            <div class="project">
+              <div class="shot">
+                <img src="img/6G.png" alt="Screenshot of 6th Gear" loading="lazy" width="800" height="500">
+              </div>
+              <div class="project-body">
+                <h3>6th Gear</h3>
+                <p>This was a test of my basic front end capabilities. I took inspiration for the color scheme here.</p>
+                <p class="stack">HTML, CSS</p>
+                <a href="https://github.com/Ramos-Erwin-P/RAMOS-ERWIN-P-CS2B-Private-Repo/blob/main/WD1_L3_RAMOS_E/index.html" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">View on GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="col-md-6 col-lg-4">
+            <div class="project">
+              <div class="shot">
+                <img src="img/EarlyProject.png" alt="Screenshot of My Early Project" loading="lazy" width="800" height="500">
+              </div>
+              <div class="project-body">
+                <h3>YouTube Clone</h3>
+                <p>An early project I made before WD1. It is a YouTube Clone. It is not uploaded to any repository.</p>
+                <p class="stack">HTML, CSS</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="col-md-6 col-lg-4">
+            <div class="project">
+              <div class="shot">
+                <img src="img/DevSite.png" alt="Screenshot of DevSite" loading="lazy" width="800" height="500">
+              </div>
+              <div class="project-body">
+                <h3>DevSite</h3>
+                <p>Of course, my very own developer's website.</p>
+                <p class="stack">HTML, CSS, JS</p>
+                <a href="https://github.com/your-username/project-three" class="btn btn-sm btn-ghost" target="_blank" rel="noopener">View on GitHub</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+        <p class="mt-4 mb-0"><a class="text-link" href="https://github.com/Ramos-Erwin-P" target="_blank" rel="noopener">See everything on GitHub</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- This is the contacts section -->
+  <footer id="contact" class="site-footer" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <h2 id="contact-title" class="footer-title">Work with me</h2>
+          <p>Have a project, a question, or an commission to discuss? Send a message and I'll reply as soon as I can.</p>
+          <ul class="list-unstyled contact-list">
+            <li><a href="mailto:erwinramos709@gmail.com">My E-mail</a></li>
+            <li><a href="https://github.com/Ramos-Erwin-P" target="_blank" rel="noopener">My Github Profile</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-7">
+          <form id="contactForm" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Your name</label>
+                <input type="text" class="form-control" id="name" required>
+                <div class="invalid-feedback">Enter your name.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Your email</label>
+                <input type="email" class="form-control" id="email" required>
+                <div class="invalid-feedback">Enter a valid email address.</div>
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="4" required></textarea>
+                <div class="invalid-feedback">Write a short message.</div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-accent">Send message</button>
+                <span id="formStatus" class="ms-3" role="status"></span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <p class="copyright">&copy; <span id="year">2026</span> Erwin P. Ramos. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="rsc/js/main.js" defer></script>
+</body>
+</html>
+
+<!--Additional notes:-->
+ <!--
+  arialabelledby is an accessibility feature
+  for sighted programs. It allows the programs
+  to read out sections of the page instead of 
+  having the visitor listen to all the content of the
+  page in order to navigate
+ -->

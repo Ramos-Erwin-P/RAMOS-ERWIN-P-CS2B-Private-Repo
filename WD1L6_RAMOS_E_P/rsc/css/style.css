@@ -1,0 +1,414 @@
+/* Using root as a set of reusable code/properties to use with var(--)*/
+/* the gradient here is also for light mode, dark mode is separated below this block */
+:root {
+  --emerald: #10b981;
+  --mint: #d1fae5;
+  --bg-gradient: linear-gradient(135deg, var(--emerald) 0%, var(--mint) 100%);
+
+  --paper: #f0fdf7;
+  --tint: rgba(255, 255, 255, 0.4);
+  /* translucent panels over the gradient */
+  --ink: #052e22;
+  --ink-soft: #0b4a37;
+  --accent: #064e3b;
+  /* buttons, links, focus */
+  --accent-dark: #022c22;
+  --on-accent: #ffffff;
+  --nav-bg: rgba(240, 253, 247, 0.88);
+  --nav-border: rgba(5, 46, 34, 0.15);
+  --footer-bg: #022c22;
+  --footer-text: #c3e8d9;
+  --footer-accent: #6ee7b7;
+
+  --font-head: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light dark;
+}
+
+/* This allows dark mode to be triggered automatically if the
+   visitor's device has it activated */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --emerald: #065f46;
+    /* gradient start */
+    --mint: #021f18;
+    /* gradient end */
+
+    --paper: #0a2f25;
+    --tint: rgba(255, 255, 255, 0.07);
+    --ink: #e6fbf1;
+    --ink-soft: #a7d9c4;
+    --accent: #6ee7b7;
+    --accent-dark: #a7f3d0;
+    --on-accent: #022c22;
+    --nav-bg: rgba(5, 36, 28, 0.88);
+    --nav-border: rgba(255, 255, 255, 0.12);
+    --footer-bg: #010f0b;
+  }
+}
+
+/* Main styling */
+html {
+  background-color: var(--emerald);
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  background: var(--bg-gradient) no-repeat;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-head);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+p {
+  max-width: 65ch;
+}
+
+a {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Nav bar styling */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--nav-bg);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.brand {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+
+.nav-toggle {
+  background: none;
+  border: 1px solid var(--ink-soft);
+  color: var(--ink);
+  border-radius: 6px;
+  padding: .35rem .8rem;
+  font: inherit;
+}
+
+@media (max-width: 767.98px) {
+  .nav-links {
+    flex-basis: 100%;
+    padding-top: .75rem;
+  }
+
+  .nav-links li {
+    padding: .35rem 0;
+  }
+
+  .site-nav nav {
+    flex-wrap: wrap;
+  }
+}
+
+/* Styling all buttons */
+.btn {
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 2px solid var(--accent);
+}
+
+.btn-accent:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: var(--on-accent);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+}
+
+.btn-ghost:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.text-link {
+  font-weight: 600;
+}
+
+/* Hero section styling */
+.hero {
+  padding: clamp(4rem, 12vw, 9rem) 0 clamp(3rem, 8vw, 6rem);
+}
+
+.hero-role {
+  color: var(--ink);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-weight: 800;
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  max-width: 18ch;
+  margin-bottom: 1.5rem;
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+}
+
+/* 
+  Added a short transition for the hero page
+  where it slides upward upon entry 
+*/
+@media (prefers-reduced-motion: no-preference) {
+  .hero .container>* {
+    animation: rise .7s ease both;
+  }
+
+  .hero .container>*:nth-child(2) {
+    animation-delay: .08s;
+  }
+
+  .hero .container>*:nth-child(3) {
+    animation-delay: .16s;
+  }
+
+  .hero .container>*:nth-child(4) {
+    animation-delay: .24s;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* I style the sections here */
+.section {
+  padding: clamp(3.5rem, 8vw, 6rem) 0;
+}
+
+.section-tint {
+  background: var(--tint);
+}
+
+.section-title {
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 2rem;
+}
+
+.lead-text {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/* Photo styling across the page */
+.portrait {
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tint);
+  aspect-ratio: 4 / 5;
+  border: 2px solid var(--ink);
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Philosophy */
+.pull-quote {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  line-height: 1.2;
+  border-left: 5px solid var(--accent);
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.principles dt {
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+}
+
+.principles dt:first-child {
+  margin-top: 0;
+}
+
+.principles dd {
+  margin: .25rem 0 0;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+
+/* Projects */
+.project {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.shot {
+  aspect-ratio: 16 / 10;
+  background: var(--tint);
+  border-bottom: 2px solid var(--ink);
+  overflow: hidden;
+}
+
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  color: var(--ink-soft);
+}
+
+.project-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.project-body h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+.project-body p {
+  margin-bottom: .75rem;
+}
+
+.stack {
+  font-size: .95rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.25rem !important;
+}
+
+.project-body .btn {
+  margin-top: auto;
+}
+
+/* Footer styling including contacts */
+.site-footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding: clamp(3.5rem, 8vw, 5.5rem) 0 2rem;
+}
+
+.footer-title {
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 1rem;
+}
+
+.site-footer a {
+  color: #fff;
+}
+
+.contact-list li {
+  padding: .25rem 0;
+}
+
+.site-footer .form-label {
+  color: #fff;
+  font-weight: 500;
+}
+
+.site-footer .form-control {
+  background: #0a3d2e;
+  border: 1px solid #1b6b50;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.site-footer .form-control:focus {
+  border-color: var(--footer-accent);
+  box-shadow: 0 0 0 3px rgba(110, 231, 183, .35);
+}
+
+.site-footer .btn-accent {
+  background: var(--footer-accent);
+  border-color: var(--footer-accent);
+  color: #022c22;
+}
+
+.site-footer .btn-accent:hover {
+  background: #a7f3d0;
+  border-color: #a7f3d0;
+}
+
+.site-footer .invalid-feedback {
+  color: #ff9ca3;
+}
+
+.copyright {
+  margin: 3rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid #14573f;
+  font-size: .9rem;
+  max-width: none;
+}
+
+.site-footer :focus-visible {
+  outline-color: var(--footer-accent);
+}
