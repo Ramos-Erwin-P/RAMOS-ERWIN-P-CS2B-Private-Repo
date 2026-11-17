@@ -255,12 +255,44 @@
 
 			<!-- MAIN CREDITS (DIRECTORS/PRODUCERS) -->
 			<section class="mov-credits">
-
+				<h2>Credits</h2>
+				<ul class="credits-list">
+					<!-- Duplicate an li block to add more -->
+					<li>
+						<span class="credit-role">Director</span>
+						<span class="credit-name">Name</span>
+					</li>
+					<li>
+						<span class="credit-role">Producer</span>
+						<span class="credit-name">Name</span>
+					</li>
+					<li>
+						<span class="credit-role">Writer</span>
+						<span class="credit-name">Name</span>
+					</li>
+				</ul>
 			</section>
 
 			<!-- LIST OF AVAILABLE CINEMA -->
 			<section class="mov-cinema" id="cinema">
-
+				<h2>Now Showing</h2>
+				<ul class="cinema-list">
+					<li>
+						<span class="cinema-name">Cinema Name</span>
+						<span class="cinema-location">Location</span>
+						<span class="cinema-times">Showtimes</span>
+					</li>
+					<li>
+						<span class="cinema-name">Cinema Name</span>
+						<span class="cinema-location">Location</span>
+						<span class="cinema-times">Showtimes</span>
+					</li>
+					<li>
+						<span class="cinema-name">Cinema Name</span>
+						<span class="cinema-location">Location</span>
+						<span class="cinema-times">Showtimes</span>
+					</li>
+				</ul>
 			</section>
 
 		</div>
@@ -300,6 +332,16 @@
 		</div>
 	</footer>
 
+
+	<!--
+	SCRIPTS
+	jQuery loads before bootstrap's JS because BS4's JS is built on top of jQuery
+	bootstrap.bundle includes Popper.js, so no need for a separate Popper Script
+	Popper.js is a small library that positions floating elements such as dropdown menus,
+	tooltips, and popovers, relative to other elements.
+	Popper currently not needed, but won't hurt to include just in case it is used later
+	11/17/2026
+	-->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
