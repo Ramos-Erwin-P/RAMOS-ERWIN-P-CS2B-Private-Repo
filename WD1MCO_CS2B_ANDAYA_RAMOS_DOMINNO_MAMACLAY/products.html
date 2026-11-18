@@ -2,67 +2,54 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bleach | Sennen Kessen-hen</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bleach | Sennen Kessesn-hen</title>
 
-    <!--
+	<!--
 		Font: Archivo Black
     Actual font costs money
 	-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600&display=swap"
-        rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600&display=swap"
+		rel="stylesheet">
 
-    <!-- Bootstrap first so style.css can override when needed -->
-    <link rel="stylesheet" href="rsc/css/bootstrap.min.css">
-    <link rel="stylesheet" href="rsc/css/style.css">
+	<!-- Bootstrap first so style.css can override when needed -->
+	<link rel="stylesheet" href="rsc/css/bootstrap.min.css">
+	<link rel="stylesheet" href="rsc/css/style.css">
 </head>
 
-<body>
+<body id="top">
+	<header class="top-header">
+		<div class="brand">
+			<!--Logo-->
+			<img src="media/img/logos/logo.png" class="logo" alt="Bleach Logo">
+			<h1><a href="index.html" class="head-title">Bleach</a></h1>
+		</div>
 
-    <!-- HEADER AND NAVIGATION -->
-    <header class="top-header">
-        <nav class="navbar navbar-expand-lg navbar-dark container">
+		<!--
+		Hamburger menu
+		data-bs-toggle="collapse" and data-bs-target="#mainNav" tells Bootstrap's JS
+		to show or hide the element with id="mainNav".
+		-->
+		<button class="nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+			aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="nav-toggle-bar"></span>
+			<span class="nav-toggle-bar"></span>
+			<span class="nav-toggle-bar"></span>
+		</button>
 
-            <a class="navbar-brand fw-bold" href="index.html">
-                <img src="" class="logo" alt="Bleach Logo">
-                Bleach
-            </a>
-
-            <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainNav"
-                aria-controls="mainNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Feature</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="characters.html">Characters</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="product.html">Products</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#cinema">Cinema</a>
-                    </li>
-                </ul>
-            </div>
-
-        </nav>
-    </header>
+		<!-- Navigation Menu. "collapse" hides it by default on phones; CSS keeps it visible on desktop -->
+		<nav class="main-nav collapse" id="mainNav" aria-label="Main">
+			<ul class="nav-list">
+				<li><a href="index.html#top">Feature</a></li>
+				<li><a href="characters.html#top">Characters</a></li>
+				<li><a href="products.html#top" aria-current="page">Products</a></li>
+				<li><a href="#cinema">Cinema</a></li>
+			</ul>
+		</nav>
+	</header>
 
     <!-- FLOATING CART BUTTON -->
     <button id="cart-toggle" class="cart-icon"
@@ -341,60 +328,66 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row g-4">
-
-                <!-- WEBSITE INFORMATION -->
-                <div class="col-12 col-md-4 footer-columns">
-
-                    <div class="footer-brand">
-
-                        <img src="" class="footer-logo"
-                            alt="Bleach Logo">
-
-                        <h1>Bleach</h1>
-                    </div>
-                    <div class="socials-logo">
-                        <!-- Add social media icons here -->
-                    </div>
-
-                </div>
-
-                <!-- DEVELOPERS -->
-                <div class="col-12 col-md-4 footer-columns">
-
-                    <h3>Developed By:</h3>
-
-                    <p>Ramos, Erwin P.</p>
-                    <p>Andaya, Yasmine I.</p>
-                    <p>Dominno, Mark Jhaiser S.</p>
-                    <p>Mamaclay, Gerald V.</p>
-
-                </div>
-
-                <!-- NAVIGATION LINKS -->
-                <div class="col-12 col-md-4 footer-columns">
-
-                    <h3>Quick Links</h3>
-
-                    <a href="index.html">Feature</a>
-                    <a href="characters.html">Characters</a>
-                    <a href="product.html">Products</a>
-                    <a href="#cinema">Cinema</a>
-
-                </div>
-            </div>
-
-            <!-- COPYRIGHT -->
-            <div class="footer-bottom">
-                <p>
-                    &copy; 2026 Bleach. All Rights Reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
+    <!-- =============== FOOTER =============== -->
+	<!-- Used 3 Bootstrap columns here. Still styled externally -->
+	<footer>
+	    <div class="container">
+	        <div class="row">
+	
+	            <!-- Column 1: Logo, title, social media logos -->
+	            <div class="col-md-4 footer-columns">
+	                <div class="footer-brand">
+	                    <!-- Logo -->
+	                    <img src="media/img/logos/logo.png" class="footer-logo" alt="Bleach Logo">
+	                    <p class="footer-title">Bleach</p>
+	                </div>
+	
+	                <!-- Social media logos -->
+	                <div class="socials-logo">
+	                    <a href="#" class="social-link" aria-label="Facebook">
+	                        <img src="media/img/logos/fb.svg" alt="">
+	                    </a>
+	
+	                    <a href="#" class="social-link" aria-label="Instagram">
+	                        <img src="media/img/logos/ig.svg" alt="">
+	                    </a>
+	
+	                    <a href="#" class="social-link" aria-label="YouTube">
+	                        <img src="media/img/logos/yt.svg" alt="">
+	                    </a>
+	                </div>
+	            </div>
+	
+	            <!-- Column 2: Developers -->
+	            <div class="col-md-4 footer-columns">
+	                <h3>Developed By:</h3>
+	                <p>Ramos, Erwin P.</p>
+	                <p>Andaya, Yasmine I.</p>
+	                <p>Dominno, Mark Jhaisser S.</p>
+	                <p>Mamaclay, Gerald V.</p>
+	            </div>
+	
+	            <!-- Column 3: Navigation links -->
+	            <div class="col-md-4 footer-columns">
+	                <h3>Explore</h3>
+	
+	                <ul class="footer-links">
+	                    <li><a href="index.html#top">Feature</a></li>
+	                    <li><a href="characters.html#top">Characters</a></li>
+	                    <li><a href="products.html#top">Products</a></li>
+	                    <li><a href="index.html#cinema">Cinema</a></li>
+	                </ul>
+	            </div>
+	
+	        </div>
+	
+	        <!-- Copyright -->
+	        <div class="footer-copyright">
+	            <p>&copy; 2026 Bleach Website. All Rights Reserved.</p>
+	        </div>
+	
+	    </div>
+	</footer>
 
     <!-- JAVASCRIPT -->
     <script src="rsc/js/bootstrap.bundle.min.js"></script>
