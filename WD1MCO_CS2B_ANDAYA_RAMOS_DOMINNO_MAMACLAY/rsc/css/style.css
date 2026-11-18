@@ -583,11 +583,13 @@ main section[id] {
   letter-spacing: 0.04em;
 }
 
+/* ===================================== */
 /* CHARACTER CARDS */
+/* ===================================== */
+
 .char-card {
   height: 100%;
   padding: 1.5625rem;
-  margin-bottom: 1.5rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -605,9 +607,12 @@ main section[id] {
   box-shadow: 0 8px 24px rgba(240, 138, 50, 0.12);
 }
 
-/* CHARACTER IMAGES */
 
-/* Image container, */
+/* ===================================== */
+/* CHARACTER IMAGES */
+/* ===================================== */
+
+/* Image container */
 .char-images {
   width: 100%;
   display: flex;
@@ -636,7 +641,10 @@ main section[id] {
   background: var(--ink-3);
 }
 
+
+/* ===================================== */
 /* CHARACTER DETAILS */
+/* ===================================== */
 
 .char-info {
   width: 100%;
@@ -644,6 +652,7 @@ main section[id] {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-grow: 1;
 }
 
 /* Character name */
@@ -654,7 +663,7 @@ main section[id] {
   margin-bottom: 0.3125rem;
 }
 
-/* Character role subtitle-like */
+/* Character role */
 .char-role {
   font-size: 0.8125rem;
   color: var(--sand);
@@ -672,7 +681,7 @@ main section[id] {
   margin-bottom: 0.9375rem;
 }
 
-/* Voice actor subtitle-like */
+/* Voice actor */
 .char-va {
   font-size: 0.9375rem;
   color: var(--sand);
@@ -686,6 +695,9 @@ main section[id] {
   font-weight: 700;
   color: var(--spirit-light);
 }
+
+
+
 
 
 /* ===================================== */
@@ -795,13 +807,18 @@ footer::before {
   color: var(--orange);
 }
 
-
 /* ===================================== */
 /* RESPONSIVE DESIGN */
 /* ===================================== */
 
-/* Phones and small tablets (under 768px) */
+
+/* ===================================== */
+/* TABLETS AND SMALLER DEVICES */
+/* ===================================== */
+
 @media (max-width: 767.98px) {
+
+  /* HAMBURGER NAVIGATION */
   .nav-toggle {
     display: flex;
   }
@@ -824,14 +841,14 @@ footer::before {
     border-top: 1px solid var(--line);
   }
 
-  /* On phones the poster is full width and keeps it from getting too tall */
+  /* INFORMATION POSTER */
   .info-poster {
     max-height: 420px;
     object-fit: cover;
     object-position: top;
   }
 
-  /* Character page hero */
+  /* CHARACTER PAGE HERO */
   body:not(:has(.hero-vid)) .hero-section {
     padding: 3.75rem 1.25rem;
   }
@@ -844,6 +861,8 @@ footer::before {
     font-size: 0.9375rem;
   }
 
+
+  /* CHARACTER SECTIONS */
   #protagonists,
   #antagonists,
   #miscellaneous {
@@ -855,6 +874,7 @@ footer::before {
     margin-bottom: 2.1875rem;
   }
 
+  /* CHARACTER CARDS */
   .char-card {
     padding: 1.25rem;
   }
@@ -870,8 +890,11 @@ footer::before {
 }
 
 
-/* Desktop (768px and up): menu is always visible, regardless of the collapse state */
-/* !important makes the declarations that they indicate win over any normal declaration. Almost like hierarchy. */
+/* ===================================== */
+/* DESKTOP */
+/* ===================================== */
+
+/* Menu stays visible on desktop, regardless of collapse state */
 @media (min-width: 768px) {
   .top-header .main-nav {
     display: block !important;
@@ -880,13 +903,19 @@ footer::before {
 }
 
 
-/* Mobile phones */
+/* ===================================== */
+/* MOBILE PHONES */
+/* ===================================== */
+
 @media (max-width: 575.98px) {
+
+  /* CREDITS */
   .credits-list li {
     flex-direction: column;
     gap: 0.1rem;
   }
 
+  /* CINEMA SCHEDULE */
   .cinema-list li {
     grid-template-columns: 1fr;
     gap: 0.15rem;
@@ -896,11 +925,13 @@ footer::before {
     text-align: left;
   }
 
+
+  /* FOOTER */
   .footer-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Character page hero */
+  /* CHARACTER PAGE HERO */
   body:not(:has(.hero-vid)) .hero-section {
     padding: 2.8125rem 0.9375rem;
   }
@@ -923,6 +954,8 @@ footer::before {
     max-width: 250px;
   }
 
+
+  /* CHARACTER SECTIONS */
   #protagonists,
   #antagonists,
   #miscellaneous {
@@ -934,6 +967,8 @@ footer::before {
     margin-bottom: 1.5625rem;
   }
 
+
+  /* CHARACTER CARDS */
   .char-card {
     padding: 1.125rem;
   }
@@ -958,14 +993,19 @@ footer::before {
 }
 
 
-/* Accessibility */
+/* ===================================== */
+/* ACCESSIBILITY */
+/* ===================================== */
+
+/* Visible keyboard focus */
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--spirit-light);
   outline-offset: 3px;
 }
 
-/* reduced motion is for people that have it activated. Takes away smooth scrolling */
+
+/* Reduced motion for users who prefer less animation */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
