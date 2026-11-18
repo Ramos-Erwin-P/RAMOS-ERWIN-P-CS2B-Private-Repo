@@ -1860,6 +1860,12 @@ footer::before {
     font-size: 0.8rem;
   }
 
+   /* Move cart panel below the header */
+.cart-panel {
+    top: 100px;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+}
 
   /* ===================================== */
   /* FOOTER */
@@ -2010,6 +2016,13 @@ footer::before {
     font-size: 1.1rem;
   }
 
+}
+
+@media (max-width: 768px) {
+    .cart-panel {
+        top: 80px;
+        height: calc(100dvh - 80px);
+    }
 }
 
 
