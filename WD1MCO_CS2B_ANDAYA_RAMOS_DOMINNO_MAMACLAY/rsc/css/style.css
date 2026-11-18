@@ -954,7 +954,7 @@ main section[id] {
 /* MOBILE CART PANEL */
 @media (max-width: 768px) {
   .cart-panel {
-    top: 165px;
+    top: 130px;
     right: -100%;
     width: 100%;
     max-width: 100%;
