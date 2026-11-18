@@ -802,6 +802,20 @@ footer::before {
   color: var(--orange);
 }
 
+/* Copyright */
+.footer-copyright {
+    margin-top: 2.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    text-align: center;
+}
+
+.footer-copyright p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--sand);
+}
+
 
 /* ===================================== */
 /* RESPONSIVE DESIGN */
