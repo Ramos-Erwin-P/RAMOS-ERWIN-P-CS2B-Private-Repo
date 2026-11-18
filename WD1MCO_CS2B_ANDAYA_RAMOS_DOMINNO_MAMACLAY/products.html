@@ -1,400 +1,303 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Bleach | Sennen Kessesn-hen</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bleach | Products</title>
 
-	<!-- Fabicon -->
+    <!-- Fabicon -->
 	<link rel="icon" type="image/jpeg" href="media/img/logos/fabicon.jpg">
 
-	<!--
-		Font: Archivo Black
-    Actual font costs money
-	-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600&display=swap"
-		rel="stylesheet">
+    <!-- Font: Archivo Black -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 
-	<!-- Bootstrap first so style.css can override when needed -->
-	<link rel="stylesheet" href="rsc/css/bootstrap.min.css">
-	<link rel="stylesheet" href="rsc/css/style.css">
+    <!-- Bootstrap 4.4.1 -->
+    <link rel="stylesheet" href="rsc/css/bootstrap.min.css">
+    <link rel="stylesheet" href="rsc/css/style.css">
 </head>
 
 <body id="top">
-	<header class="top-header">
-		<div class="brand">
-			<!--Logo-->
-			<a href="index.html#top"><img src="media/img/logos/logo.png" class="logo" alt="Bleach Logo"></a>
-			<h1><a href="index.html#top" class="head-title">Bleach | Sennen Kessen-hen</a></h1>
-		</div>
 
-		<!--
-		Hamburger menu
-		data-bs-toggle="collapse" and data-bs-target="#mainNav" tells Bootstrap's JS
-		to show or hide the element with id="mainNav".
-		-->
-		<button class="nav-toggle" type="button" data-toggle="collapse" data-target="#mainNav"
-			aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="nav-toggle-bar"></span>
-			<span class="nav-toggle-bar"></span>
-			<span class="nav-toggle-bar"></span>
-		</button>
-
-		<!-- Navigation Menu. "collapse" hides it by default on phones; CSS keeps it visible on desktop -->
-		<nav class="main-nav collapse" id="mainNav" aria-label="Main">
-			<ul class="nav-list">
-				<li><a href="index.html#top">Features</a></li>
-				<li><a href="characters.html#top">Characters</a></li>
-				<li><a href="products.html#top" aria-current="page">Products</a></li>
-				<li><a href="#cinema">Cinemas</a></li>
-			</ul>
-		</nav>
-	</header>
-
-    <!-- FLOATING CART BUTTON -->
-    <button id="cart-toggle" class="cart-icon"
-        type="button" aria-label="Open shopping cart">
-
-        <span class="cart-symbol">🛒</span>
-        <span id="cart-count">0</span>
-        <span id="cart-dot"></span>
-
-    </button>
-
-    <!-- CART OVERLAY -->
-    <div id="cart-overlay" class="cart-overlay"></div>
-
-    <!-- CART PANEL -->
-    <aside id="cart-panel" class="cart-panel">
-
-        <div class="cart-header">
-            <h2>YOUR CART</h2>
-
-            <button id="close-cart" type="button"
-                aria-label="Close cart">
-                &times;
-            </button>
-        </div>
-        <div id="cart-items"></div>
-
-        <div class="cart-summary">
-            <p>
-                Subtotal:
-                <span id="subtotal">₱0.00</span>
-            </p>
-            <p>
-                Shipping:
-                <span id="shipping">₱0.00</span>
-            </p>
-
-            <h3>
-                Total:
-                <span id="total">₱0.00</span>
-            </h3>
-
-            <button id="checkout-btn" type="button"
-                onclick="checkout()">
-                PROCEED TO CHECKOUT
-            </button>
+    <!-- HEADER -->
+    <header class="top-header">
+        <div class="brand">
+            <img src="media/img/logos/logo.png" class="logo" alt="Bleach Logo">
+            <h1><a href="index.html" class="head-title">Bleach</a></h1>
         </div>
 
-        <p id="shop-message" role="status"
-            aria-live="polite"></p>
-    </aside>
+        <!-- Hamburger Menu -->
+        <button class="nav-toggle" type="button" data-toggle="collapse" data-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+
+        <!-- Navigation -->
+        <nav class="main-nav collapse" id="mainNav" aria-label="Main">
+            <ul class="nav-list">
+                <li><a href="index.html#top">Feature</a></li>
+                <li><a href="characters.html#top">Characters</a></li>
+                <li><a href="products.html#top" aria-current="page">Products</a></li>
+                <li><a href="index.html#cinema">Cinema</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- MAIN CONTENT -->
-    <main class="container">
+    <main>
+
+        <!-- SHOPPING CART -->
+        <button id="cart-toggle" class="cart-icon" type="button" aria-label="Open shopping cart">
+            <span class="cart-symbol">🛒</span>
+            <span id="cart-count">0</span>
+            <span id="cart-dot"></span>
+        </button>
+
+        <div id="cart-overlay" class="cart-overlay"></div>
+
+        <aside id="cart-panel" class="cart-panel" aria-label="Shopping cart">
+            <div class="cart-header">
+                <h2>YOUR CART</h2>
+                <button id="close-cart" type="button" aria-label="Close cart">&times;</button>
+            </div>
+
+            <div id="cart-items"></div>
+
+            <div class="cart-summary">
+                <p>Subtotal: <span id="subtotal">₱0.00</span></p>
+                <p>Shipping: <span id="shipping">₱0.00</span></p>
+                <h3>Total: <span id="total">₱0.00</span></h3>
+                <button id="checkout-btn" type="button" onclick="checkout()">PROCEED TO CHECKOUT</button>
+            </div>
+
+            <p id="shop-message" role="status" aria-live="polite"></p>
+        </aside>
 
         <!-- SHOP INTRODUCTION -->
         <section class="shop-intro">
-            <h1>BANKAI SHOP</h1>
+            <div class="container text-center">
+                <h1>BANKAI SHOP</h1>
+            </div>
         </section>
 
         <!-- PRODUCT CATALOG -->
         <section class="products-sec">
-            <h2>Our Merchandise</h2>
-            <p>
-                Explore and collect your favorite Bleach merchandise.
-                Discover exclusive collectibles, apparel, accessories,
-                footwear, and manga series.
-            </p>
-            <div class="product-grid" id="all">
-
-                <div class="product-card">
-
-                    <img src="media/img/Figurine/ichigo.jpg"
-                        alt="Ichigo Kurosaki Figurine">
-                    <div class="product-info">
-                        <h3>Ichigo Kurosaki</h3>
-                        <p>
-                            Collectible character figure of Ichigo Kurosaki.
-                        </p>
-                        <h4>₱1,250.00</h4>
-
-                        <button onclick="addToCart(1, 'Ichigo Kurosaki', 1250, this)">
-                            Add to Cart
-                        </button>
-                    </div>
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>Our Merchandise</h2>
+                    <p>Explore and collect your favorite Bleach merchandise. Discover exclusive collectibles, apparel, accessories, footwear, and manga series.</p>
                 </div>
 
+                <!-- Bootstrap Grid: 1 column on phones, 2 on small screens, 4 on large screens -->
+                <div class="row product-grid" id="all">
 
-                <div class="product-card">
-
-                    <img src="media/img/Figurine/Byakuya.jpg"
-                        alt="Byakuya Kuchiki Figurine">
-                    <div class="product-info">
-                        <h3>Byakuya Kuchiki</h3>
-                        <p>
-                            Detailed collectible figure of Byakuya Kuchiki.
-                        </p>
-                        <h4>₱1,500.00</h4>
-
-                        <button onclick="addToCart(2, 'Byakuya Kuchiki', 1500, this)">
-                            Add to Cart
-                        </button>
+                    <!-- FIGURINES -->
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <img src="media/img/Figurine/ichigo.jpg" class="card-img-top img-fluid" alt="Ichigo Kurosaki Figurine">
+                            <div class="card-body product-info">
+                                <h3 class="card-title">Ichigo Kurosaki</h3>
+                                <p class="card-text">Collectible character figure of Ichigo Kurosaki.</p>
+                                <h4>₱1,250.00</h4>
+                                <button type="button" class="btn btn-warning btn-block" onclick="addToCart(1, 'Ichigo Kurosaki', 1250, this)">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="product-card">
-
-                    <img src="media/img/Figurine/Toshiro.jpg"
-                        alt="Toshiro Hitsugaya Figurine">
-                    <div class="product-info">
-                        <h3>Toshiro Hitsugaya</h3>
-                        <p>
-                            Collectible character figure of Toshiro Hitsugaya.
-                        </p>
-                        <h4>₱1,350.00</h4>
-
-                        <button onclick="addToCart(3, 'Toshiro Hitsugaya', 1350, this)">
-                            Add to Cart
-                        </button>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <img src="media/img/Figurine/Byakuya.jpg" class="card-img-top img-fluid" alt="Byakuya Kuchiki Figurine">
+                            <div class="card-body product-info">
+                                <h3 class="card-title">Byakuya Kuchiki</h3>
+                                <p class="card-text">Detailed collectible figure of Byakuya Kuchiki.</p>
+                                <h4>₱1,500.00</h4>
+                                <button type="button" class="btn btn-warning btn-block" onclick="addToCart(2, 'Byakuya Kuchiki', 1500, this)">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="product-card">
-
-                    <img src="media/img/Figurine/hollow.jpg"
-                        alt="Hollow Ichigo Figurine">
-                    <div class="product-info">
-                        <h3>Hollow Ichigo</h3>
-                        <p>
-                            Detailed collectible figure of Hollow Ichigo.
-                        </p>
-                        <h4>₱1,000.00</h4>
-
-                        <button onclick="addToCart(4, 'Hollow Ichigo', 1000, this)">
-                            Add to Cart
-                        </button>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <img src="media/img/Figurine/Toshiro.jpg" class="card-img-top img-fluid" alt="Toshiro Hitsugaya Figurine">
+                            <div class="card-body product-info">
+                                <h3 class="card-title">Toshiro Hitsugaya</h3>
+                                <p class="card-text">Collectible character figure of Toshiro Hitsugaya.</p>
+                                <h4>₱1,350.00</h4>
+                                <button type="button" class="btn btn-warning btn-block" onclick="addToCart(3, 'Toshiro Hitsugaya', 1350, this)">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="product-card">
-
-                    <img src="media/img/Clothes/ichigo.jpg"
-                        alt="Ichigo Black T-Shirt">
-                    <div class="product-info">
-                        <h3>Ichigo Black T-Shirt</h3>
-                        <p>
-                            Anime Bleach graphic T-shirt.
-                        </p>
-                        <h4>₱350.00</h4>
-
-                        <button onclick="addToCart(5, 'Ichigo Black T-Shirt', 350, this)">
-                            Add to Cart
-                        </button>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <img src="media/img/Figurine/hollow.jpg" class="card-img-top img-fluid" alt="Hollow Ichigo Figurine">
+                            <div class="card-body product-info">
+                                <h3 class="card-title">Hollow Ichigo</h3>
+                                <p class="card-text">Detailed collectible figure of Hollow Ichigo.</p>
+                                <h4>₱1,000.00</h4>
+                                <button type="button" class="btn btn-warning btn-block" onclick="addToCart(4, 'Hollow Ichigo', 1000, this)">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="product-card">
-
-                    <img src="media/img/Clothes/jacket.jpg"
-                        alt="Hollow Black Hoodie">
-                    <div class="product-info">
-                        <h3>Hollow Black Hoodie</h3>
-                        <p>
-                            Comfortable hoodie with Bleach-inspired design.
-                        </p>
-                        <h4>₱1,000.00</h4>
-
-                        <button onclick="addToCart(6, 'Hollow Black Hoodie', 1000, this)">
-                            Add to Cart
-                        </button>
+                    <!-- CLOTHING -->
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <img src="media/img/Clothes/ichigo.jpg" class="card-img-top img-fluid" alt="Ichigo Black T-Shirt">
+                            <div class="card-body product-info">
+                                <h3 class="card-title">Ichigo Black T-Shirt</h3>
+                                <p class="card-text">Anime Bleach graphic T-shirt.</p>
+                                <h4>₱350.00</h4>
+                                <button type="button" class="btn btn-warning btn-block" onclick="addToCart(5, 'Ichigo Black T-Shirt', 350, this)">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="product-card">
-
-                    <img src="media/img/Clothes/bleach.jpg"
-                        alt="Bleach T-Shirt">
-                    <div class="product-info">
-                        <h3>Bleach T-Shirt</h3>
-                        <p>
-                            Bleach-inspired anime T-shirt.
-                        </p>
-                        <h4>₱750.00</h4>
-
-                        <button onclick="addToCart(7, 'Bleach T-Shirt', 750, this)">
-                            Add to Cart
-                        </button>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <img src="media/img/Clothes/jacket.jpg" class="card-img-top img-fluid" alt="Hollow Black Hoodie">
+                            <div class="card-body product-info">
+                                <h3 class="card-title">Hollow Black Hoodie</h3>
+                                <p class="card-text">Comfortable hoodie with Bleach-inspired design.</p>
+                                <h4>₱1,000.00</h4>
+                                <button type="button" class="btn btn-warning btn-block" onclick="addToCart(6, 'Hollow Black Hoodie', 1000, this)">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="product-card">
-
-                    <img src="media/img/Clothes/bleach1.jpg"
-                        alt="Bleach Character Shirt">
-                    <div class="product-info">
-                        <h3>Bleach Character Shirt</h3>
-                        <p>
-                            White shirt featuring Bleach characters.
-                        </p>
-                        <h4>₱480.00</h4>
-
-                        <button onclick="addToCart(8, 'Bleach Character Shirt', 480, this)">
-                            Add to Cart
-                        </button>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <img src="media/img/Clothes/bleach.jpg" class="card-img-top img-fluid" alt="Bleach T-Shirt">
+                            <div class="card-body product-info">
+                                <h3 class="card-title">Bleach T-Shirt</h3>
+                                <p class="card-text">Bleach-inspired anime T-shirt.</p>
+                                <h4>₱750.00</h4>
+                                <button type="button" class="btn btn-warning btn-block" onclick="addToCart(7, 'Bleach T-Shirt', 750, this)">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="product-card">
-
-                    <img src="media/img/Manga/BloodWar.jpg"
-                        alt="Bleach Thousand-Year Blood War The Blood Warfare">
-                    <div class="product-info">
-                        <h3>Bleach: Thousand-Year Blood War - The Blood Warfare</h3>
-                        <p>
-                            The Quincy invade the Soul Society.
-                        </p>
-                        <h4>₱450.00</h4>
-
-                        <button onclick="addToCart(9, 'Bleach: The Blood Warfare', 450, this)">
-                            Add to Cart
-                        </button>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <img src="media/img/Clothes/bleach1.jpg" class="card-img-top img-fluid" alt="Bleach Character Shirt">
+                            <div class="card-body product-info">
+                                <h3 class="card-title">Bleach Character Shirt</h3>
+                                <p class="card-text">White shirt featuring Bleach characters.</p>
+                                <h4>₱480.00</h4>
+                                <button type="button" class="btn btn-warning btn-block" onclick="addToCart(8, 'Bleach Character Shirt', 480, this)">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="product-card">
-
-                    <img src="media/img/Manga/Separation.jpg"
-                        alt="Bleach Thousand-Year Blood War The Separation">
-                    <div class="product-info">
-                        <h3>Bleach: Thousand-Year Blood War - The Separation</h3>
-                        <p>
-                            The Soul Reapers prepare for another battle.
-                        </p>
-                        <h4>₱450.00</h4>
-
-                        <button onclick="addToCart(10, 'Bleach: The Separation', 450, this)">
-                            Add to Cart
-                        </button>
+                    <!-- MANGA -->
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <img src="media/img/Manga/BloodWar.jpg" class="card-img-top img-fluid" alt="Bleach The Blood Warfare">
+                            <div class="card-body product-info">
+                                <h3 class="card-title">Bleach: Thousand-Year Blood War - The Blood Warfare</h3>
+                                <p class="card-text">The Quincy invade the Soul Society.</p>
+                                <h4>₱450.00</h4>
+                                <button type="button" class="btn btn-warning btn-block" onclick="addToCart(9, 'Bleach: The Blood Warfare', 450, this)">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="product-card">
-
-                    <img src="media/img/Manga/Conflict.jpg"
-                        alt="Bleach Thousand-Year Blood War The Conflict">
-                    <div class="product-info">
-                        <h3>Bleach: Thousand-Year Blood War - The Conflict</h3>
-                        <p>
-                            Ichigo and his allies face Yhwach's forces.
-                        </p>
-                        <h4>₱450.00</h4>
-
-                        <button onclick="addToCart(11, 'Bleach: The Conflict', 450, this)">
-                            Add to Cart
-                        </button>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <img src="media/img/Manga/Separation.jpg" class="card-img-top img-fluid" alt="Bleach The Separation">
+                            <div class="card-body product-info">
+                                <h3 class="card-title">Bleach: Thousand-Year Blood War - The Separation</h3>
+                                <p class="card-text">The Soul Reapers prepare for another battle.</p>
+                                <h4>₱450.00</h4>
+                                <button type="button" class="btn btn-warning btn-block" onclick="addToCart(10, 'Bleach: The Separation', 450, this)">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="product-card">
-
-                    <img src="media/img/Manga/Calamity.jpg"
-                        alt="Bleach Thousand-Year Blood War The Calamity">
-                    <div class="product-info">
-                        <h3>Bleach: Thousand-Year Blood War - The Calamity</h3>
-                        <p>
-                            The final battle determines the fate of the three worlds.
-                        </p>
-                        <h4>₱450.00</h4>
-
-                        <button onclick="addToCart(12, 'Bleach: The Calamity', 450, this)">
-                            Add to Cart
-                        </button>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <img src="media/img/Manga/Conflict.jpg" class="card-img-top img-fluid" alt="Bleach The Conflict">
+                            <div class="card-body product-info">
+                                <h3 class="card-title">Bleach: Thousand-Year Blood War - The Conflict</h3>
+                                <p class="card-text">Ichigo and his allies face Yhwach's forces.</p>
+                                <h4>₱450.00</h4>
+                                <button type="button" class="btn btn-warning btn-block" onclick="addToCart(11, 'Bleach: The Conflict', 450, this)">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <img src="media/img/Manga/Calamity.jpg" class="card-img-top img-fluid" alt="Bleach The Calamity">
+                            <div class="card-body product-info">
+                                <h3 class="card-title">Bleach: Thousand-Year Blood War - The Calamity</h3>
+                                <p class="card-text">The final battle determines the fate of the three worlds.</p>
+                                <h4>₱450.00</h4>
+                                <button type="button" class="btn btn-warning btn-block" onclick="addToCart(12, 'Bleach: The Calamity', 450, this)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- =============== FOOTER =============== -->
-	<!-- Used 3 Bootstrap columns here. Still styled externally -->
-	<footer>
-	    <div class="container">
-	        <div class="row">
-	
-	            <!-- Column 1: Logo, title, social media logos -->
-	            <div class="col-md-4 footer-columns">
-	                <div class="footer-brand">
-	                    <!-- Logo -->
-	                    <img src="media/img/logos/logo.png" class="footer-logo" alt="Bleach Logo">
-	                    <p class="footer-title">Bleach</p>
-	                </div>
-	
-	                <!-- Social media logos -->
-	                <div class="socials-logo">
-	                    <a href="#" class="social-link" aria-label="Facebook">
-	                        <img src="media/img/logos/fb.svg" alt="">
-	                    </a>
-	
-	                    <a href="#" class="social-link" aria-label="Instagram">
-	                        <img src="media/img/logos/ig.svg" alt="">
-	                    </a>
-	
-	                    <a href="#" class="social-link" aria-label="YouTube">
-	                        <img src="media/img/logos/yt.svg" alt="">
-	                    </a>
-	                </div>
-	            </div>
-	
-	            <!-- Column 2: Developers -->
-	            <div class="col-md-4 footer-columns">
-	                <h3>Developed By:</h3>
-	                <p>Ramos, Erwin P.</p>
-	                <p>Andaya, Yasmine I.</p>
-	                <p>Dominno, Mark Jhaisser S.</p>
-	                <p>Mamaclay, Gerald V.</p>
-	            </div>
-	
-	            <!-- Column 3: Navigation links -->
-	            <div class="col-md-4 footer-columns">
-	                <h3>Explore</h3>
-	
-	                <ul class="footer-links">
-	                    <li><a href="index.html#top">Features</a></li>
-	                    <li><a href="characters.html#top">Characters</a></li>
-	                    <li><a href="products.html#top">Products</a></li>
-	                    <li><a href="index.html#cinema">Cinemas</a></li>
-	                </ul>
-	            </div>
-	
-	        </div>
-	
-	        <!-- Copyright -->
-	        <div class="footer-copyright">
-	            <p>&copy; 2026 Bleach Website. All Rights Reserved.</p>
-	        </div>
-	
-	    </div>
-	</footer>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+
+                <!-- Logo and Social Media -->
+                <div class="col-12 col-md-4 footer-columns">
+                    <div class="footer-brand">
+                        <img src="media/img/logos/logo.png" class="footer-logo" alt="Bleach Logo">
+                        <p class="footer-title">Bleach</p>
+                    </div>
+
+                    <div class="socials-logo">
+                        <a href="#" class="social-link" aria-label="Facebook"><img src="media/img/logos/fb.svg" alt=""></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><img src="media/img/logos/ig.svg" alt=""></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><img src="media/img/logos/yt.svg" alt=""></a>
+                    </div>
+                </div>
+
+                <!-- Developers -->
+                <div class="col-12 col-md-4 footer-columns">
+                    <h3>Developed By:</h3>
+                    <p>Ramos, Erwin P.</p>
+                    <p>Andaya, Yasmine I.</p>
+                    <p>Dominno, Mark Jhaisser S.</p>
+                    <p>Mamaclay, Gerald V.</p>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="col-12 col-md-4 footer-columns">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#top">Feature</a></li>
+                        <li><a href="characters.html#top">Characters</a></li>
+                        <li><a href="products.html#top">Products</a></li>
+                        <li><a href="index.html#cinema">Cinema</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center mt-4 pt-3">
+                <p>&copy; 2026 Bleach Website. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="rsc/js/bootstrap.bundle.min.js"></script>
-    <script src="rsc/js/main.js"></script>
     <script src="rsc/js/product.js"></script>
 
 </body>
