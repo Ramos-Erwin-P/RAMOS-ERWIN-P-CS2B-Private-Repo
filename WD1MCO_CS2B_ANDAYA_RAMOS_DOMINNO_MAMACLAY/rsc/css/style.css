@@ -27,6 +27,10 @@
 }
 
 
+/* ===================================== */
+/* GENERAL STYLING */
+/* ===================================== */
+
 /* Bootstrap overrides */
 html {
   scroll-behavior: smooth;
@@ -40,10 +44,7 @@ body {
   line-height: 1.6;
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: 700;
   line-height: 1.1;
@@ -70,8 +71,7 @@ a:hover {
 }
 
 /* Hide logo slots until a real image path is added (avoids broken-image text) */
-.logo[src=""],
-.footer-logo[src=""] {
+.logo[src=""], .footer-logo[src=""] {
   display: none;
 }
 
@@ -98,7 +98,10 @@ main section[id] {
 }
 
 
-/* Header and nav */
+/* ===================================== */
+/* HEADER AND NAVIGATION */
+/* ===================================== */
+
 .top-header {
   position: sticky;
   top: 0;
@@ -250,7 +253,7 @@ main section[id] {
 /* FEATURE PAGE */
 /* ===================================== */
 
-/* hero */
+/* HERO SECTION */
 .hero-section {
   position: relative;
   height: calc(100vh - var(--header-h));
@@ -300,7 +303,7 @@ main section[id] {
 }
 
 
-/* Information section */
+/* INFORMATION SECTION */
 .info-poster {
   display: block;
   width: 100%;
@@ -343,7 +346,7 @@ main section[id] {
 }
 
 
-/* Highlights carousel */
+/* HIGHLIGHTS CAROUSEL */
 
 /* This prevented the jumping that happened when clicking the buttons on the carousel */
 .mov-highlights {
@@ -395,7 +398,7 @@ main section[id] {
   opacity: 1;
 }
 
-/* Synopsis */
+/* SYNOPSIS SECTION */
 .mov-synopsis p {
   max-width: 60ch;
   /* keeps lines readable */
@@ -410,9 +413,9 @@ main section[id] {
 }
 
 
-/* VA and Characters Grid */
+/* VOICE ACTOR AND CHARACTERS GRID */
 /* Space between rows since Bootstrap columns only add side padding */
-.artists-grid > [class*="col-"] {
+.artists-grid > [class*="col"] {
   margin-bottom: 1.5rem;
 }
 
@@ -458,7 +461,7 @@ main section[id] {
 }
 
 
-/* Credits and cinema lists are same styled lists */
+/* CREDITS AND CINEMA LISTS are same styled lists */
 .credits-list,
 .cinema-list {
   margin: 0;
@@ -513,6 +516,7 @@ main section[id] {
 /* CHARACTERS PAGE */
 /* ===================================== */
 
+/* HERO SECTION */
 .hero-content {
   max-width: 900px;
   margin: 0 auto;
@@ -565,7 +569,7 @@ main section[id] {
   transform: translateY(-3px);
 }
 
-/* CHARACTER SECTIONS */
+/* CHARACTER SECTION */
 #protagonists,
 #antagonists,
 #miscellaneous {
@@ -583,16 +587,19 @@ main section[id] {
   letter-spacing: 0.04em;
 }
 
-/* ===================================== */
-/* CHARACTER CARDS */
-/* ===================================== */
+/* CHARACTERS GRID */
+.char-grid > [class*="col"] {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
 
 .char-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   height: 100%;
   padding: 1.5625rem;
   text-align: center;
-  display: flex;
-  flex-direction: column;
   background: var(--ink-2);
   color: var(--cream);
   border: 1px solid var(--line);
@@ -607,12 +614,7 @@ main section[id] {
   box-shadow: 0 8px 24px rgba(240, 138, 50, 0.12);
 }
 
-
-/* ===================================== */
-/* CHARACTER IMAGES */
-/* ===================================== */
-
-/* Image container */
+/* Character image container */
 .char-images {
   width: 100%;
   display: flex;
@@ -641,11 +643,7 @@ main section[id] {
   background: var(--ink-3);
 }
 
-
-/* ===================================== */
-/* CHARACTER DETAILS */
-/* ===================================== */
-
+/* Character Details */
 .char-info {
   width: 100%;
   text-align: center;
@@ -695,9 +693,6 @@ main section[id] {
   font-weight: 700;
   color: var(--spirit-light);
 }
-
-
-
 
 
 /* ===================================== */
@@ -807,6 +802,7 @@ footer::before {
   color: var(--orange);
 }
 
+
 /* ===================================== */
 /* RESPONSIVE DESIGN */
 /* ===================================== */
@@ -861,7 +857,6 @@ footer::before {
     font-size: 0.9375rem;
   }
 
-
   /* CHARACTER SECTIONS */
   #protagonists,
   #antagonists,
@@ -891,19 +886,6 @@ footer::before {
 
 
 /* ===================================== */
-/* DESKTOP */
-/* ===================================== */
-
-/* Menu stays visible on desktop, regardless of collapse state */
-@media (min-width: 768px) {
-  .top-header .main-nav {
-    display: block !important;
-    height: auto !important;
-  }
-}
-
-
-/* ===================================== */
 /* MOBILE PHONES */
 /* ===================================== */
 
@@ -924,7 +906,6 @@ footer::before {
   .cinema-times {
     text-align: left;
   }
-
 
   /* FOOTER */
   .footer-grid {
@@ -954,7 +935,6 @@ footer::before {
     max-width: 250px;
   }
 
-
   /* CHARACTER SECTIONS */
   #protagonists,
   #antagonists,
@@ -966,7 +946,6 @@ footer::before {
     font-size: 1.6875rem;
     margin-bottom: 1.5625rem;
   }
-
 
   /* CHARACTER CARDS */
   .char-card {
@@ -994,6 +973,19 @@ footer::before {
 
 
 /* ===================================== */
+/* DESKTOP */
+/* ===================================== */
+
+/* Menu stays visible on desktop, regardless of collapse state */
+@media (min-width: 768px) {
+  .top-header .main-nav {
+    display: block !important;
+    height: auto !important;
+  }
+}
+
+
+/* ===================================== */
 /* ACCESSIBILITY */
 /* ===================================== */
 
@@ -1003,7 +995,6 @@ button:focus-visible {
   outline: 2px solid var(--spirit-light);
   outline-offset: 3px;
 }
-
 
 /* Reduced motion for users who prefer less animation */
 @media (prefers-reduced-motion: reduce) {
