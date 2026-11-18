@@ -1,3 +1,4 @@
+
 /*
    Root design. Reusable values with var() to have consistency
    Color Palette is taken from the movie poster
@@ -478,36 +479,65 @@ main section[id] {
 /* CHARACTERS PAGE */
 /* ===================================== */
 
-/* HERO SECTION */
-.hero-content {
-  max-width: 900px;
-  margin: 0 auto;
+
+/* ===================================== */
+/* CHARACTERS PAGE - HERO SECTION */
+/* ===================================== */
+
+.hero-section-char {
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+    padding: 100px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(rgba(16, 15, 20, 0.65), rgba(16, 15, 20, 0.80)),
+        url("../../media/img/stills/bleach.jpg") center center / cover no-repeat;
+
+    text-align: center;
+    overflow: hidden;
 }
 
-.hero-content h1 {
-  font-size: clamp(2rem, 4vw, 2.625rem);
-  font-weight: 700;
-  margin-bottom: 1.25rem;
-  letter-spacing: 0.06em;
-  color: var(--cream);
+/* Hero content */
+.hero-content-char {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.hero-content p {
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  color: var(--sand);
-  margin-bottom: 1.875rem;
+/* Hero heading */
+.hero-content-char h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.625rem);
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.06em;
 }
 
-.hero-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.9375rem;
+/* Hero description */
+.hero-content-char p {
+    max-width: 750px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
 }
 
-.hero-btn {
+/* Hero navigation links */
+.hero-links-char {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-btn-char {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   background-color: var(--orange);
@@ -520,7 +550,7 @@ main section[id] {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.hero-btn:hover {
+.hero-btn-char:hover {
   background-color: var(--gold);
   color: var(--ink);
   transform: translateY(-3px);
@@ -1184,16 +1214,41 @@ footer::before {
 /* RESPONSIVE DESIGN */
 /* ===================================== */
 
+
+/* ===================================== */
 /* TABLETS AND SMALLER DEVICES */
+/* Maximum width: 767.98px */
+/* ===================================== */
+
 @media (max-width: 767.98px) {
 
-  /* HAMBURGER NAVIGATION */
+  /* HEADER AND HAMBURGER NAVIGATION */
+  .top-header {
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .brand {
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .brand h1 {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    height: 38px;
+  }
+
   .nav-toggle {
     display: flex;
+    flex-shrink: 0;
   }
 
   .top-header .main-nav {
     flex: 0 0 100%;
+    width: 100%;
   }
 
   .nav-list {
@@ -1202,47 +1257,142 @@ footer::before {
     padding: 0.5rem 0 1rem;
   }
 
+  .nav-list li {
+    width: 100%;
+  }
+
   .nav-list a {
     display: block;
     padding: 0.8rem 0;
     border-top: 1px solid var(--line);
   }
 
-  /* INFORMATION POSTER */
+
+  /* FEATURE PAGE HERO */
+  .hero-section {
+    height: 65vh;
+    min-height: 350px;
+  }
+
+  .hero-vid {
+    object-fit: cover;
+  }
+
+
+  /* INFORMATION SECTION */
   .info-poster {
     max-height: 420px;
     object-fit: cover;
     object-position: top;
   }
 
-  /* CHARACTER PAGE HERO */
-  body:not(:has(.hero-vid)) .hero-section {
-    padding: 3.75rem 1.25rem;
+  .info-card .card-body {
+    padding: 1.25rem;
+  }
+
+  .info-images {
+    padding: 0 1.25rem 1.25rem;
+    gap: 0.5rem;
+  }
+
+
+  /* HIGHLIGHTS CAROUSEL */
+  .carousel-caption {
+    padding: 2rem 2rem 1.25rem;
+  }
+
+  .carousel-caption h5 {
+    font-size: 1rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+
+  /* SYNOPSIS SECTION */
+  .mov-synopsis p {
+    font-size: 1rem;
+  }
+
+
+  /* VOICE ACTORS AND ARTISTS */
+  .artist-name {
+    font-size: 1.35rem;
+  }
+
+
+  /* CINEMA SCHEDULE */
+  .cinema-list li {
+    grid-template-columns: 1.5fr 1.5fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .cinema-name {
+    font-size: 1.2rem;
+  }
+
+
+  /* ===================================== */
+  /* CHARACTERS PAGE */
+  /* ===================================== */
+
+  .hero-section-char {
+    min-height: 380px;
+    padding: 4rem 1.5rem;
+    background-position: center;
+  }
+
+  .hero-content {
+    max-width: 650px;
   }
 
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+    line-height: 1.2;
   }
 
   .hero-content p {
-    font-size: 0.9375rem;
+    font-size: 1rem;
+    max-width: 600px;
   }
+
+  .hero-links-char {
+    gap: 0.75rem;
+  }
+
+  .hero-btn-char {
+    padding: 0.7rem 1.1rem;
+    font-size: 0.875rem;
+  }
+
 
   /* CHARACTER SECTIONS */
   #protagonists,
   #antagonists,
   #miscellaneous {
-    padding: 2.5rem 0.9375rem 4.0625rem;
+    padding: 2.5rem 0.9375rem 4rem;
   }
 
   .sec-title {
     font-size: 2rem;
-    margin-bottom: 2.1875rem;
+    margin-bottom: 2rem;
   }
 
-  /* CHARACTER CARDS */
+
+  /* CHARACTER GRID AND CARDS */
+  .char-grid > [class*="col"] {
+    margin-bottom: 1.25rem;
+  }
+
   .char-card {
     padding: 1.25rem;
+  }
+
+  .char-images {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   .char-img,
@@ -1254,13 +1404,22 @@ footer::before {
     font-size: 1.375rem;
   }
 
+  .char-desc {
+    font-size: 0.9rem;
+  }
+
+
+  /* ===================================== */
   /* PRODUCTS PAGE */
+  /* ===================================== */
+
   .shop-intro {
     padding: 60px 20px 40px;
   }
 
   .shop-intro h1 {
-    font-size: clamp(2rem, 7vw, 3rem);
+    font-size: clamp(2rem, 6vw, 3rem);
+    letter-spacing: 2px;
   }
 
   .products-sec {
@@ -1274,18 +1433,35 @@ footer::before {
     letter-spacing: 3px;
   }
 
-  /* Bootstrap columns remain in control of the grid */
+  .products-sec > p {
+    font-size: 0.95rem;
+  }
+
+  /*
+     Keep Bootstrap in control of product columns.
+     col-12 = one column
+     col-sm-6 = two columns
+     col-lg-3 = four columns
+  */
   .product-grid {
-    margin-left: -15px;
-    margin-right: -15px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
   }
 
   .product-grid > [class*="col-"] {
-    margin-bottom: 25px;
+    display: flex;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-card {
+    width: 100%;
+    height: 100%;
   }
 
   .product-card > img {
     height: 200px;
+    padding: 12px;
   }
 
   .product-info {
@@ -1296,6 +1472,16 @@ footer::before {
     font-size: 1rem;
   }
 
+  .product-info p {
+    font-size: 0.85rem;
+  }
+
+  .product-info h4 {
+    font-size: 1.1rem;
+  }
+
+
+  /* SHOPPING CART */
   .cart-icon {
     top: 90px;
     right: 18px;
@@ -1303,14 +1489,139 @@ footer::before {
     height: 52px;
   }
 
+  .cart-symbol {
+    font-size: 22px;
+  }
+
   .cart-panel {
     width: 380px;
+    max-width: 90%;
+    padding: 22px;
   }
+
+
+  /* ===================================== */
+  /* FOOTER */
+  /* ===================================== */
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .footer-title {
+    font-size: 1.5rem;
+  }
+
 }
 
 
+/* ===================================== */
 /* MOBILE PHONES */
+/* Maximum width: 575.98px */
+/* ===================================== */
+
 @media (max-width: 575.98px) {
+
+  /* HEADER */
+  .top-header {
+    padding: 0.5rem 0.875rem;
+  }
+
+  .brand h1 {
+    font-size: 1.15rem;
+  }
+
+  .logo {
+    height: 32px;
+  }
+
+  .nav-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  /* FEATURE PAGE HERO */
+  .hero-section {
+    height: 55vh;
+    min-height: 300px;
+  }
+
+
+  /* GENERAL SECTION SPACING */
+  main > .container {
+    padding-top: 0.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  main section {
+    padding: 2rem 0;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+
+  /* INFORMATION SECTION */
+  .info-card .card-body {
+    padding: 1rem;
+  }
+
+  .info-card .card-title {
+    font-size: 1.6rem;
+  }
+
+  .info-details {
+    font-size: 0.9rem;
+  }
+
+  .info-images {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem 1rem;
+  }
+
+  .info-images img:last-child {
+    display: none;
+  }
+
+
+  /* HIGHLIGHTS CAROUSEL */
+  .carousel-caption {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .carousel-caption h5 {
+    font-size: 0.9rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .carousel-indicators {
+    margin-bottom: 0.5rem;
+  }
+
+
+  /* SYNOPSIS */
+  .mov-synopsis p {
+    font-size: 0.95rem;
+  }
+
+
+  /* VOICE ACTORS */
+  .artist-name {
+    font-size: 1.2rem;
+  }
+
+  .artist-role {
+    font-size: 0.875rem;
+  }
+
 
   /* CREDITS */
   .credits-list li {
@@ -1318,87 +1629,132 @@ footer::before {
     gap: 0.1rem;
   }
 
+  .credit-role {
+    flex-basis: auto;
+  }
+
+
   /* CINEMA SCHEDULE */
   .cinema-list li {
     grid-template-columns: 1fr;
     gap: 0.15rem;
   }
 
+  .cinema-name {
+    font-size: 1.2rem;
+  }
+
   .cinema-times {
     text-align: left;
   }
 
-  /* FOOTER */
-  .footer-grid {
-    grid-template-columns: 1fr;
+
+  /* ===================================== */
+  /* CHARACTERS PAGE */
+  /* ===================================== */
+
+  .hero-section-char {
+    min-height: 350px;
+    padding: 3.5rem 1rem;
+    background-position: center;
   }
 
-  /* CHARACTER PAGE HERO */
-  body:not(:has(.hero-vid)) .hero-section {
-    padding: 2.8125rem 0.9375rem;
+  .hero-content {
+    width: 100%;
   }
 
   .hero-content h1 {
-    font-size: 1.625rem;
+    font-size: clamp(1.5rem, 6vw, 1.9rem);
+    line-height: 1.25;
+    margin-bottom: 1rem;
   }
 
   .hero-content p {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
   }
 
-  .hero-links {
+  .hero-links-char {
     flex-direction: column;
-    gap: 0.75rem;
+    align-items: center;
+    gap: 0.65rem;
   }
 
-  .hero-btn {
+  .hero-btn-char {
     width: 100%;
-    max-width: 250px;
+    max-width: 260px;
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+    text-align: center;
   }
+
 
   /* CHARACTER SECTIONS */
   #protagonists,
   #antagonists,
   #miscellaneous {
-    padding: 2.1875rem 0.75rem 3.4375rem;
+    padding: 2.2rem 0.75rem 3rem;
   }
 
   .sec-title {
-    font-size: 1.6875rem;
-    margin-bottom: 1.5625rem;
+    font-size: 1.65rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
   }
+
 
   /* CHARACTER CARDS */
-  .char-card {
-    padding: 1.125rem;
+  .char-grid > [class*="col"] {
+    margin-bottom: 1rem;
   }
 
-  .char-img,
+  .char-card {
+    padding: 1rem;
+  }
+
+  .char-images {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .char-img {
+    width: 65%;
+    height: 200px;
+  }
+
   .va-img {
+    width: 30%;
     height: 200px;
   }
 
   .char-name {
-    font-size: 1.25rem;
-  }
-
-  .char-desc {
-    font-size: 0.875rem;
+    font-size: 1.2rem;
   }
 
   .char-role,
   .char-va {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
   }
 
+  .char-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+
+  /* ===================================== */
   /* PRODUCTS PAGE */
+  /* ===================================== */
+
   .shop-intro {
     padding: 45px 15px 35px;
   }
 
   .shop-intro h1 {
     font-size: 1.75rem;
-    letter-spacing: 2px;
+    line-height: 1.25;
+    letter-spacing: 1.5px;
   }
 
   .products-sec {
@@ -1410,51 +1766,65 @@ footer::before {
   .products-sec h2 {
     font-size: 1.5rem;
     letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 
   .products-sec > p {
-    font-size: 0.9rem;
-    margin-bottom: 25px;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
   }
 
-  /* Two Bootstrap columns on mobile */
+  /*
+     Bootstrap controls the actual column widths.
+     Your HTML uses col-12 col-sm-6 col-lg-3.
+     On phones below 576px, products appear one per row.
+  */
   .product-grid {
+    display: flex;
+    flex-wrap: wrap;
     margin-left: -15px;
     margin-right: -15px;
   }
 
   .product-grid > [class*="col-"] {
-    margin-bottom: 20px;
+    display: flex;
+    margin-bottom: 1.25rem;
+  }
+
+  .product-card {
+    width: 100%;
+    min-width: 0;
   }
 
   .product-card > img {
-    height: 155px;
-    padding: 10px;
+    height: 210px;
+    padding: 12px;
   }
 
   .product-info {
-    padding: 10px;
+    padding: 12px;
   }
 
   .product-info h3 {
-    font-size: 0.9rem;
-  }
-
-  .product-info p {
-    font-size: 0.8rem;
-  }
-
-  .product-info h4 {
     font-size: 1rem;
   }
 
-  .product-info button {
-    padding: 10px 6px;
-    font-size: 0.8rem;
+  .product-info p {
+    font-size: 0.85rem;
   }
 
-  /* CART */
+  .product-info h4 {
+    font-size: 1.05rem;
+  }
+
+  .product-info button {
+    padding: 11px;
+    font-size: 0.875rem;
+  }
+
+
+  /* SHOPPING CART */
   .cart-icon {
     top: 85px;
     right: 12px;
@@ -1472,44 +1842,174 @@ footer::before {
     padding: 20px;
   }
 
+  .cart-header h2 {
+    font-size: 1.25rem;
+  }
+
   .cart-item {
     gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .cart-item-details {
+    flex: 1 1 55%;
   }
 
   .cart-item button {
     padding: 6px 8px;
     font-size: 0.8rem;
   }
+
+
+  /* ===================================== */
+  /* FOOTER */
+  /* ===================================== */
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  footer {
+    padding: 2.5rem 0 1.5rem;
+  }
+
+  .footer-brand {
+    flex-wrap: wrap;
+  }
+
+  .footer-title {
+    font-size: 1.4rem;
+  }
+
+  .footer-copyright {
+    margin-top: 1.75rem;
+  }
+
 }
 
 
+/* ===================================== */
 /* VERY SMALL PHONES */
+/* Maximum width: 380px */
+/* ===================================== */
+
 @media (max-width: 380px) {
 
-  /* PRODUCTS PAGE */
-  .product-card > img {
-    height: 230px;
-  }
-
-  .product-info h3 {
+  /* HEADER */
+  .brand h1 {
     font-size: 1rem;
   }
 
-  .product-info p {
-    font-size: 0.875rem;
+  .logo {
+    height: 28px;
   }
 
-  .product-info button {
-    font-size: 0.875rem;
+
+  /* FEATURE PAGE */
+  .hero-section {
+    min-height: 280px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+
+  /* CHARACTER PAGE */
+  .hero-section-char {
+    min-height: 320px;
+    padding: 3rem 0.75rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.45rem;
+  }
+
+  .hero-content p {
+    font-size: 0.82rem;
+  }
+
+  .hero-btn-char {
+    max-width: 230px;
+    font-size: 0.8rem;
+  }
+
+  .sec-title {
+    font-size: 1.45rem;
+  }
+
+  .char-card {
+    padding: 0.875rem;
+  }
+
+  .char-img,
+  .va-img {
+    height: 175px;
+  }
+
+  .char-name {
+    font-size: 1.1rem;
+  }
+
+
+  /* PRODUCTS PAGE */
+  .shop-intro {
+    padding: 35px 12px 30px;
   }
 
   .shop-intro h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .products-sec h2 {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+
+  .product-card > img {
+    height: 180px;
+    padding: 10px;
+  }
+
+  .product-info {
+    padding: 10px;
+  }
+
+  .product-info h3 {
+    font-size: 0.95rem;
+  }
+
+  .product-info p {
+    font-size: 0.8rem;
+  }
+
+  .product-info button {
+    padding: 9px 6px;
+    font-size: 0.8rem;
+  }
+
+
+  /* CART */
+  .cart-icon {
+    right: 10px;
+    width: 44px;
+    height: 44px;
   }
 
   .cart-panel {
     padding: 16px;
   }
+
+  .cart-item-details h4 {
+    font-size: 0.85rem;
+  }
+
+  .cart-summary h3 {
+    font-size: 1.1rem;
+  }
+
 }
 
 
@@ -1518,40 +2018,33 @@ footer::before {
 /* ===================================== */
 
 @media (min-width: 768px) {
+
+  /* Keep desktop navigation visible */
   .top-header .main-nav {
     display: block !important;
     height: auto !important;
   }
+
 }
 
 
 /* ===================================== */
-/* ACCESSIBILITY */
+/* LARGE DESKTOP SCREENS */
+/* Minimum width: 1200px */
 /* ===================================== */
 
-/* Visible keyboard focus */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--spirit-light);
-  outline-offset: 3px;
-}
+@media (min-width: 1200px) {
 
-/* Reduced motion for users who prefer less animation */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  .hero-section-char {
+    min-height: 500px;
   }
 
-  * {
-    transition: none !important;
+  .char-card {
+    padding: 1.75rem;
   }
 
-  .hero-vid {
-    display: none;
+  .product-card > img {
+    height: 260px;
   }
 
-  .cart-bounce,
-  #cart-dot.show {
-    animation: none !important;
-  }
 }
