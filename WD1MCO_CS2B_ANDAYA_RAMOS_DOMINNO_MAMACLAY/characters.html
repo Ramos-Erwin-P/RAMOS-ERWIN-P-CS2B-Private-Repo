@@ -1,94 +1,1019 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Bleach</title>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		<link rel="stylesheet" href="rsc/css/style.css">
-	</head>
+<html lang="en">
 
-    <body>
-        <header class="top-header">
-			<div class="brand">
-				<!--Logo-->
-				<img src=""class="logo">
-				<h1>Bleach</h1>
-			</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bleach</title>
 
-            <!-- Nagivation Menu -->
-			<nav class="navbar">
-				<ul class="nav-list">
-					<li><a href="index.html">Feature</a></li>
-					<li><a href="characters.html">Characters</a></li>
-					<li><a href="products.html">Products</a></li>
-					<li><a href="#cinema">Cinema</a></li>
-				</ul>
-			</nav>
-		</header>
+    <!--
+        Font: Archivo Black
+        Actual font costs money
+	-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
-        <main class="container">
+    <!-- Bootstrap first so style.css can override when needed -->
+    <link rel="stylesheet" href="rsc/css/bootstrap.min.css">
+    <link rel="stylesheet" href="rsc/css/style.css">
+</head>
+
+<body id="top">
+    <header class="top-header">
+        <div class="brand">
+            <!--Logo-->
+            <img src="media/img/logos/logo.png" class="logo" alt="Bleach Logo">
+            <h1><a href="index.html" class="head-title">Bleach</a></h1>
+        </div>
+
+        <!--
+            Hamburger menu
+            data-bs-toggle="collapse" and data-bs-target="#mainNav" tells Bootstrap's JS
+            to show or hide the element with id="mainNav".
+		-->
+        <button class="nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+
+        <!-- Navigation Menu. "collapse" hides it by default on phones; CSS keeps it visible on desktop -->
+        <nav class="main-nav collapse" id="mainNav" aria-label="Main">
+            <ul class="nav-list">
+                <li><a href="index.html#top">Feature</a></li>
+                <li><a href="characters.html#top" aria-current="page">Characters</a></li>
+                <li><a href="products.html#top">Products</a></li>
+                <li><a href="index.html#cinema">Cinema</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- =============== MOVIE CHARACTERS =============== -->
+    <main>
+        <!--
+            Removed .container class for main. Bootstrap adds a 15px side padding,
+            fixed max-width, auto margins, and interrupts design flow.
+            This keeps hero at full width.
+	    -->
+
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>BLEACH: THOUSAND-YEAR BLOOD WAR</h1>
+                <p>
+                    Explore the characters, allies, and enemies who shape the
+                    final battle between the Soul Reapers and the Quincy.
+                </p>
+
+                <div class="hero-links">
+                    <a href="#protagonists" class="hero-btn">Protagonists</a>
+                    <a href="#antagonists" class="hero-btn">Antagonists</a>
+                    <a href="#miscellaneous" class="hero-btn">Miscellaneous Characters</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Everything below the hero is centered by Bootstrap's .container -->
+        <div class="container">
+
             <!-- PROTAGONISTS -->
-            <section class="prot-char">
-				
-                <!-- Card Layout -->
-                <div class="char-card">
-                    <img src="">
+            <section id="protagonists">
+                <h2 class="sec-title">PROTAGONISTS</h2>
 
-                    <!-- Character Details -->
-                    <div class="prot-info">
-                        <h2>Name</h2>
-                        <p>Description</p>
-                        <p>Voice Actor</p>
+                <!-- Justifies the grid. Makes it so that the last odd ending is centered-->
+                <div class="row g-4 justify-content-center">
+
+                    <!-- ICHIGO KUROSAKI -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/Main/Characters/Ichigo.jpg" class="char-img"
+                                    alt="Ichigo Kurosaki">
+                                <img src="media/img/Protags/Main/VoiceActor/Masakazu(Ichigo).jpg" class="va-img"
+                                    alt="Masakazu Morita">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Ichigo Kurosaki</h3>
+                                <p class="char-role">Human - Substitute Soul Reaper - Quincy - Hollow Hybrid</p>
+                                <p class="char-desc">
+                                    Ichigo Kurosaki is the main protagonist of Bleach and a teenager who gains the
+                                    powers of a Soul Reaper. He is determined to protect his family, friends, and
+                                    anyone in danger. Throughout the series, he discovers the truth about his
+                                    complicated heritage and the different powers within him. During the Thousand-Year
+                                    Blood War, he faces the challenges of understanding his identity while preparing
+                                    to confront Yhwach.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Masakazu Morita</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ORIHIME INOUE -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/Main/Characters/Orihime.jpg" class="char-img"
+                                    alt="Orihime Inoue">
+                                <img src="media/img/Protags/Main/VoiceActor/Yuki(Orihime).jpg" class="va-img"
+                                    alt="Yuki Matsuoka">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Orihime Inoue</h3>
+                                <p class="char-role">Human - Shun Shun Rikka</p>
+                                <p class="char-desc">
+                                    Orihime Inoue is one of Ichigo's closest friends and a kind-hearted person who
+                                    values the lives of others. Her spiritual abilities allow her to reject events
+                                    through the powers of the Shun Shun Rikka. Although she prefers peaceful solutions,
+                                    she is willing to stand her ground when protecting the people she cares about.
+                                    During the Thousand-Year Blood War, her healing and defensive abilities become
+                                    important in supporting her allies.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Yuki Matsuoka</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- YASUTORA SADO -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/Main/Characters/Chad.jpg" class="char-img"
+                                    alt="Yasutora Sado">
+                                <img src="media/img/Protags/Main/VoiceActor/Hiroki(Chad).jpg" class="va-img"
+                                    alt="Hiroki Yasumoto">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Yasutora Sado (Chad)</h3>
+                                <p class="char-role">Human - Fullbringer</p>
+                                <p class="char-desc">
+                                    Yasutora Sado, commonly known as Chad, is one of Ichigo's closest friends.
+                                    Despite his intimidating appearance, he is gentle, respectful, and strongly
+                                    protective of others. His Fullbring abilities allow him to manifest powerful
+                                    armor around his arms. He fights alongside Ichigo and their friends whenever
+                                    their loved ones or the Soul Society are threatened.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Hiroki Yasumoto</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- URYU ISHIDA -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/Main/Characters/Uryu.jpg" class="char-img"
+                                    alt="Uryu Ishida">
+                                <img src="media/img/Protags/Main/VoiceActor/Noriaki(Uryu).jpg" class="va-img"
+                                    alt="Noriaki Sugiyama">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Uryu Ishida</h3>
+                                <p class="char-role">Quincy - Wandenreich - Sternritter A (The Antithesis)</p>
+                                <p class="char-desc">
+                                    Uryu Ishida is a skilled Quincy who initially considers Soul Reapers his enemies
+                                    because of the conflict between their groups. He is intelligent, analytical,
+                                    and highly skilled with a bow and spiritual techniques. Despite his reserved
+                                    personality, he deeply cares about his friends and often puts himself in danger
+                                    to help them. During the Thousand-Year Blood War, his unexpected decision to
+                                    join the Wandenreich creates tension between him and Ichigo.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Noriaki Sugiyama</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RUKIA KUCHIKI -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/Main/Characters/Rukia.jpg" class="char-img"
+                                    alt="Rukia Kuchiki">
+                                <img src="media/img/Protags/Main/VoiceActor/Fumiko(Rukia).jpg" class="va-img"
+                                    alt="Fumiko Orikasa">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Rukia Kuchiki</h3>
+                                <p class="char-role">Soul Reaper - Gotei 13 - 13th Division Lieutenant</p>
+                                <p class="char-desc">
+                                    Rukia Kuchiki is a Soul Reaper who first introduces Ichigo to the world of
+                                    Soul Reapers and Hollows. She is disciplined, determined, and compassionate,
+                                    although she sometimes hides her emotions behind a serious attitude. Her Zanpakuto,
+                                    Sode no Shirayuki, possesses powerful ice-based abilities. Throughout the war,
+                                    Rukia demonstrates her growth as a fighter and her determination to protect
+                                    her friends and fellow Soul Reapers.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Fumiko Orikasa</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RENJI ABARAI -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/Main/Characters/Renji.jpg" class="char-img"
+                                    alt="Renji Abarai">
+                                <img src="media/img/Protags/Main/VoiceActor/Kentaro(Renji).jpg" class="va-img"
+                                    alt="Kentarou Itou">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Renji Abarai</h3>
+                                <p class="char-role">Soul Reaper - Gotei 13 - 6th Division Lieutenant</p>
+                                <p class="char-desc">
+                                    Renji Abarai is the lieutenant of the 6th Division and a childhood friend
+                                    of Rukia Kuchiki. He is energetic, stubborn, and highly determined to become
+                                    stronger. His Zanpakuto, Zabimaru, takes the form of a segmented blade with
+                                    powerful long-range attacks. During the Thousand-Year Blood War, Renji undergoes
+                                    further training to unlock his true Bankai and improve his abilities.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Kentarou Itou</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ICHIBE HYOSUBE -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadZero/Characters/Ichibe.jpg" class="char-img"
+                                    alt="Ichibe Hyosube">
+                                <img src="media/img/Protags/SquadZero/VoiceActor/Naomi(Ichibe).jpg" class="va-img"
+                                    alt="Naomi Kusumi">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Ichibe Hyosube</h3>
+                                <p class="char-role">Soul Reaper - Squad Zero - Commander</p>
+                                <p class="char-desc">
+                                    Ichibe Hyosube is the leader of Squad Zero, also known as the Royal Guard.
+                                    He is responsible for naming the important objects and concepts within the
+                                    Soul Society. His Zanpakuto, Ichimonji, allows him to manipulate names and
+                                    the powers associated with them. As one of the strongest Soul Reapers,
+                                    he plays a major role in defending the Soul King Palace against the Wandenreich.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Naomi Kusumi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OETSU NIMAIYA -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadZero/Characters/Oetsu.jpg" class="char-img"
+                                    alt="Oetsu Nimaiya">
+                                <img src="media/img/Protags/SquadZero/VoiceActor/Yoji(Oetsu).jpg" class="va-img"
+                                    alt="Yoji Ueda">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Oetsu Nimaiya</h3>
+                                <p class="char-role">Soul Reaper - Squad Zero - Blade God</p>
+                                <p class="char-desc">
+                                    Oetsu Nimaiya is a member of Squad Zero and the creator of the Zanpakuto.
+                                    He is known for his energetic personality and exceptional sword-making skills.
+                                    His knowledge of Zanpakuto makes him an important figure in the history of
+                                    Soul Reapers. During the war, he demonstrates his extraordinary swordsmanship
+                                    against the invading Quincy forces.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Yoji Ueda</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TENJIRO KIRINJI -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadZero/Characters/Tenjiro.jpg" class="char-img"
+                                    alt="Tenjiro Kirinji">
+                                <img src="media/img/Protags/SquadZero/VoiceActor/Tomoyuki(Tenjiro).jpg" class="va-img"
+                                    alt="Tomoyuki Shimura">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Tenjiro Kirinji</h3>
+                                <p class="char-role">Soul Reaper - Squad Zero - Divine General of the East</p>
+                                <p class="char-desc">
+                                    Tenjiro Kirinji is a member of Squad Zero who specializes in healing techniques.
+                                    He is known for his extraordinary speed and his ability to use special hot
+                                    springs for recovery. His personality is loud and confident, but he takes
+                                    his responsibilities as a member of the Royal Guard seriously. He assists
+                                    in preparing the Soul Reapers for the challenges of the Thousand-Year Blood War.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Tomoyuki Shimura</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KIRIO HIKIFUNE -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadZero/Characters/Kirio.jpg" class="char-img"
+                                    alt="Kirio Hikifune">
+                                <img src="media/img/Protags/SquadZero/VoiceActor/Ayumi(Kirio).jpg" class="va-img"
+                                    alt="Ayumi Tsunematsu">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Kirio Hikifune</h3>
+                                <p class="char-role">Soul Reaper - Squad Zero - Ruler of Grain</p>
+                                <p class="char-desc">
+                                    Kirio Hikifune is a member of Squad Zero who specializes in creating food
+                                    infused with spiritual energy. She previously served as the captain of the
+                                    12th Division before joining the Royal Guard. Her abilities allow her to
+                                    strengthen and restore the spiritual energy of others through her cooking.
+                                    She plays an important role in helping the Soul Reapers recover and prepare
+                                    for battle.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Ayumi Tsunematsu</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SENJUMARU SHUTARA -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadZero/Characters/Senjumaru.jpg" class="char-img"
+                                    alt="Senjumaru Shutara">
+                                <img src="media/img/Protags/SquadZero/VoiceActor/Rina(Senjumaru).jpg" class="va-img"
+                                    alt="Rina Sato">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Senjumaru Shutara</h3>
+                                <p class="char-role">Soul Reaper - Squad Zero - Great Weaver</p>
+                                <p class="char-desc">
+                                    Senjumaru Shutara is a member of Squad Zero known for her exceptional
+                                    weaving abilities. She creates special garments that can provide protection
+                                    and conceal powerful spiritual properties. Her calm and elegant personality
+                                    hides her dangerous combat skills. During the invasion of the Soul King Palace,
+                                    she uses her abilities to challenge the members of the Schutzstaffel.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Rina Sato</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SHUNSUI KYORAKU -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadCaptains/Characters/Shunsui.jpg" class="char-img"
+                                    alt="Shunsui Kyoraku">
+                                <img src="media/img/Protags/SquadCaptains/VoiceActor/Akio(Shunsui).jpg" class="va-img"
+                                    alt="Akio Otsuka">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Shunsui Kyoraku</h3>
+                                <p class="char-role">Soul Reaper - Gotei 13 - 1st Division Captain / Head Captain</p>
+                                <p class="char-desc">
+                                    Shunsui Kyoraku is a powerful Soul Reaper known for his relaxed attitude
+                                    and distinctive appearance. Despite his carefree personality, he is an
+                                    experienced strategist who understands the difficult decisions required
+                                    during wartime. His Zanpakuto allows him to turn children's games into
+                                    deadly battles. Following the death of the previous Head Captain, Shunsui
+                                    assumes leadership of the Gotei 13 during one of its most difficult periods.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Akio Otsuka</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SOI FON -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadCaptains/Characters/Soi.jpg" class="char-img"
+                                    alt="Soi Fon">
+                                <img src="media/img/Protags/SquadCaptains/VoiceActor/Houko(Soi).jpg" class="va-img"
+                                    alt="Houko Kuwashima">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Soi Fon</h3>
+                                <p class="char-role">Soul Reaper - Gotei 13 - 2nd Division Captain</p>
+                                <p class="char-desc">
+                                    Soi Fon is the captain of the 2nd Division and the commander of the
+                                    Stealth Force. She is strict, disciplined, and highly devoted to her
+                                    responsibilities. Her fighting style focuses on speed, precision, and
+                                    assassination techniques. Despite her serious personality, she has a
+                                    complicated history with Yoruichi Shihoin, whom she once deeply admired.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Houko Kuwashima</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ROJURO OTOBASHI -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadCaptains/Characters/Rojuro.jpg" class="char-img"
+                                    alt="Rojuro Otoribashi">
+                                <img src="media/img/Protags/SquadCaptains/VoiceActor/Shouto(Rojuro).jpg" class="va-img"
+                                    alt="Shouto Kashii">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Rojuro Otoribashi</h3>
+                                <p class="char-role">Soul Reaper - Gotei 13 - 3rd Division Captain</p>
+                                <p class="char-desc">
+                                    Rojuro Otoribashi, also known as Rose, is the captain of the 3rd Division
+                                    and a former member of the Visored. He has a refined personality and a
+                                    strong appreciation for music and art. His Zanpakuto allows him to create
+                                    powerful illusions through sound. Although he appears elegant and composed,
+                                    he is a capable fighter who takes his duties as a captain seriously.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Shouto Kashii</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ISANE KOTETSU -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadCaptains/Characters/Isane.jpg" class="char-img"
+                                    alt="Isane Kotetsu">
+                                <img src="media/img/Protags/SquadCaptains/VoiceActor/Yukana(Isane).jpg" class="va-img"
+                                    alt="Yukana">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Isane Kotetsu</h3>
+                                <p class="char-role">Soul Reaper - Gotei 13 - 4th Division Lieutenant</p>
+                                <p class="char-desc">
+                                    Isane Kotetsu is the lieutenant of the 4th Division and a dedicated
+                                    medical Soul Reaper. She is gentle, responsible, and committed to
+                                    helping injured members of the Gotei 13. Although she can be shy and
+                                    easily startled, she remains dependable during difficult situations.
+                                    Her medical knowledge and healing abilities make her an important
+                                    part of the Soul Society's support forces.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Yukana Nogami</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SHINJI HIRAKO -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadCaptains/Characters/Shinji.jpg" class="char-img"
+                                    alt="Shinji Hirako">
+                                <img src="media/img/Protags/SquadCaptains/VoiceActor/Masaya(Shinji).jpg" class="va-img"
+                                    alt="Masaya Onosaka">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Shinji Hirako</h3>
+                                <p class="char-role">Soul Reaper - Gotei 13 - 5th Division Captain</p>
+                                <p class="char-desc">
+                                    Shinji Hirako is the captain of the 5th Division and a former member
+                                    of the Visored. He is known for his playful personality, unusual sense
+                                    of humor, and ability to remain calm in dangerous situations. His
+                                    Zanpakuto, Sakanade, reverses the senses and direction of his opponents.
+                                    He uses his experience and unique abilities to assist the Soul Society
+                                    during the war against the Quincy.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Masaya Onosaka</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BYAKUYA KUCHIKI -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadCaptains/Characters/Byakuya.jpg" class="char-img"
+                                    alt="Byakuya Kuchiki">
+                                <img src="media/img/Protags/SquadCaptains/VoiceActor/Ryotaro(Byakuya).jpg"
+                                    class="va-img" alt="Ryotaro Okiayu">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Byakuya Kuchiki</h3>
+                                <p class="char-role">Soul Reaper - Gotei 13 - 6th Division Captain</p>
+                                <p class="char-desc">
+                                    Byakuya Kuchiki is the captain of the 6th Division and the head of
+                                    the noble Kuchiki family. He is composed, disciplined, and strongly
+                                    believes in maintaining the laws of the Soul Society. His Zanpakuto,
+                                    Senbonzakura, releases countless blade-like fragments that resemble
+                                    cherry blossom petals. During the Thousand-Year Blood War, he faces
+                                    a devastating defeat that forces him to reconsider the importance
+                                    of relying on others.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Ryotaro Okiayu</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TETSUZAEMON IBA -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadCaptains/Characters/Tetsuzaemon.jpg" class="char-img"
+                                    alt="Tetsuzaemon Iba">
+                                <img src="media/img/Protags/SquadCaptains/VoiceActor/Nishirin(Tetsuzaemon).jpg"
+                                    class="va-img" alt="Rintaro Nishi">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Tetsuzaemon Iba</h3>
+                                <p class="char-role">Soul Reaper - Gotei 13 - 7th Division Lieutenant</p>
+                                <p class="char-desc">
+                                    Tetsuzaemon Iba is a member of the 7th Division who is known for
+                                    his serious attitude and strong sense of duty. He is a dependable
+                                    Soul Reaper who respects the responsibilities that come with serving
+                                    the Gotei 13. Although he is not always in the spotlight, he remains
+                                    committed to supporting his fellow Soul Reapers. His loyalty and
+                                    determination make him a reliable member of the organization.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Rintaro Nishi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LISA YADOMARU -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadCaptains/Characters/Lisa.jpg" class="char-img"
+                                    alt="Lisa Yadomaru">
+                                <img src="media/img/Protags/SquadCaptains/VoiceActor/Sayori(Lisa).jpg" class="va-img"
+                                    alt="Sayori Ishizuka">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Lisa Yadomaru</h3>
+                                <p class="char-role">Soul Reaper - Former 8th Division Lieutenant - Visored</p>
+                                <p class="char-desc">
+                                    Lisa Yadomaru is a former lieutenant of the 8th Division and a member
+                                    of the Visored. She is intelligent, composed, and often displays a
+                                    serious attitude during battles. Her Hollow powers provide her with
+                                    additional strength and combat abilities. Despite her reserved nature,
+                                    she remains loyal to her allies and contributes to the fight against
+                                    the Wandenreich.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Sayori Ishizuka</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TOSHIRO HITSUGAYA -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadCaptains/Characters/Toshiro.jpg" class="char-img"
+                                    alt="Toshiro Hitsugaya">
+                                <img src="media/img/Protags/SquadCaptains/VoiceActor/Romi(Toshiro).jpg" class="va-img"
+                                    alt="Romi Park">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Toshiro Hitsugaya</h3>
+                                <p class="char-role">Soul Reaper - Gotei 13 - 10th Division Captain</p>
+                                <p class="char-desc">
+                                    Toshiro Hitsugaya is the young captain of the 10th Division and
+                                    one of the most talented Soul Reapers of his generation. He is
+                                    serious, intelligent, and responsible despite his young appearance.
+                                    His Zanpakuto, Hyorinmaru, gives him powerful ice-based abilities.
+                                    During the Thousand-Year Blood War, he faces dangerous opponents
+                                    and demonstrates the full potential of his Bankai.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Romi Park</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KENPACHI ZARAKI -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadCaptains/Characters/Kenpachi.jpg" class="char-img"
+                                    alt="Kenpachi Zaraki">
+                                <img src="media/img/Protags/SquadCaptains/VoiceActor/Fumihiko(Kenpachi).jpg"
+                                    class="va-img" alt="Fumihiko Tachiki">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Kenpachi Zaraki</h3>
+                                <p class="char-role">Soul Reaper - Gotei 13 - 11th Division Captain</p>
+                                <p class="char-desc">
+                                    Kenpachi Zaraki is the captain of the 11th Division and a Soul Reaper
+                                    who enjoys challenging battles. He relies heavily on his immense
+                                    physical strength, endurance, and natural fighting instincts.
+                                    Despite his violent reputation, he has a strong sense of loyalty
+                                    toward his division. During the war, he discovers more about his
+                                    Zanpakuto and gradually unlocks abilities he had previously suppressed.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Fumihiko Tachiki</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MAYURI KUROTSUCHI -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadCaptains/Characters/Mayuri.jpg" class="char-img"
+                                    alt="Mayuri Kurotsuchi">
+                                <img src="media/img/Protags/SquadCaptains/VoiceActor/Ryusei(Mayuri).jpg" class="va-img"
+                                    alt="Ryusei Nakao">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Mayuri Kurotsuchi</h3>
+                                <p class="char-role">Soul Reaper - Gotei 13 - 12th Division Captain</p>
+                                <p class="char-desc">
+                                    Mayuri Kurotsuchi is the captain of the 12th Division and the head
+                                    of the Soul Society's research and development department. He is
+                                    highly intelligent, unpredictable, and willing to use unusual
+                                    scientific methods to achieve his goals. His knowledge of biology,
+                                    technology, and spiritual experimentation makes him a dangerous
+                                    opponent. During the war, he uses his inventions and strategies
+                                    to counter the abilities of the Quincy.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Ryusei Nakao</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JUSHIRO UKITAKE -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/SquadCaptains/Characters/Jushiro.jpg" class="char-img"
+                                    alt="Jushiro Ukitake">
+                                <img src="media/img/Protags/SquadCaptains/VoiceActor/Hideo(Jushiro).jpg" class="va-img"
+                                    alt="Hideo Ishikawa">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Jushiro Ukitake</h3>
+                                <p class="char-role">Soul Reaper - Gotei 13 - 13th Division Captain</p>
+                                <p class="char-desc">
+                                    Jushiro Ukitake is the captain of the 13th Division and one of
+                                    the most respected Soul Reapers in the Gotei 13. He is kind,
+                                    thoughtful, and deeply concerned about the well-being of others.
+                                    Although his health often limits his physical abilities, he remains
+                                    a capable and experienced fighter. His connection to the Soul King
+                                    becomes especially important during the events of the Thousand-Year
+                                    Blood War.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Hideo Ishikawa</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KISUKE URAHARA -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/Gotei13/Characters/Kisuke.jpg" class="char-img"
+                                    alt="Kisuke Urahara">
+                                <img src="media/img/Protags/Gotei13/VoiceActor/Shinichiro(Kisuke).jpg" class="va-img"
+                                    alt="Shinichiro Miki">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Kisuke Urahara</h3>
+                                <p class="char-role">Soul Reaper - Former 12th Division Captain</p>
+                                <p class="char-desc">
+                                    Kisuke Urahara is the owner of the Urahara Shop and a former
+                                    captain of the 12th Division. He is a brilliant inventor and
+                                    strategist who often hides his intelligence behind a relaxed
+                                    and playful personality. His inventions and knowledge of Soul
+                                    Reaper abilities make him an important ally to Ichigo and his
+                                    friends. During the Thousand-Year Blood War, he contributes
+                                    through his scientific knowledge and creative battle strategies.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Shinichiro Miki</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- YORUICHI SHIHOIN -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Protags/Gotei13/Characters/Yoruichi.jpg" class="char-img"
+                                    alt="Yoruichi Shihoin">
+                                <img src="media/img/Protags/Gotei13/VoiceActor/Satsuki(Yoruichi).jpg" class="va-img"
+                                    alt="Satsuki Yukino">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Yoruichi Shihoin</h3>
+                                <p class="char-role">Soul Reaper - Former 2nd Division Captain - Former Stealth Force
+                                    Commander</p>
+                                <p class="char-desc">
+                                    Yoruichi Shihoin is a former captain of the 2nd Division and
+                                    commander of the Stealth Force. She is known for her exceptional
+                                    speed, hand-to-hand combat skills, and mastery of Shunko. Her
+                                    playful and confident personality often contrasts with her
+                                    impressive fighting abilities. She is also a close ally of Kisuke
+                                    Urahara and plays an important role in supporting Ichigo and the
+                                    Soul Society during the war.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Satsuki Yukino</p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             </section>
 
+
             <!-- ANTAGONISTS -->
-            <section class="ant-char">
-                
+            <section id="antagonists">
+                <h2 class="sec-title">ANTAGONISTS</h2>
+
+                <!-- Justifies the grid. Makes it so that the last odd ending is centered-->
+                <div class="row g-4 justify-content-center">
+
+                    <!-- YHWACH -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Antags/Schutzstaffel/Characters/Yhwach.jpg" class="char-img"
+                                    alt="Yhwach">
+                                <img src="media/img/Antags/Schutzstaffel/VoiceActor/Takayuki(Yhwach).jpg" class="va-img"
+                                    alt="Takayuki Sugo">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Yhwach</h3>
+                                <p class="char-role">Quincy - Wandenreich - Emperor - Schrift A (The Almighty)</p>
+                                <p class="char-desc">
+                                    Yhwach is the emperor of the Wandenreich and the primary antagonist
+                                    of the Thousand-Year Blood War. Known as the Father of the Quincy,
+                                    he possesses the Almighty, an extraordinary ability that allows
+                                    him to perceive and alter the future. His goal is to reshape the
+                                    worlds according to his vision, even if it means destroying the
+                                    existing order.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Takayuki Sugo</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JUGRAM HASCHWALTH -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Antags/Schutzstaffel/Characters/Jugram.jpg" class="char-img"
+                                    alt="Jugram Haschwalth">
+                                <img src="media/img/Antags/Schutzstaffel/VoiceActor/Yuichiro(Jugram).jpg" class="va-img"
+                                    alt="Yuuichirou Umehara">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Jugram Haschwalth</h3>
+                                <p class="char-role">Quincy - Wandenreich - Sternritter Grandmaster - Schrift B (The
+                                    Balance)</p>
+                                <p class="char-desc">
+                                    Jugram Haschwalth is Yhwach's right-hand man and the Grandmaster
+                                    of the Sternritter. He possesses The Balance, an ability that
+                                    distributes misfortune and fortune between himself and his opponents.
+                                    Calm and composed, he is deeply loyal to Yhwach and plays a major
+                                    role in carrying out the emperor's plans.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Yuuichirou Umehara</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ASKIN NAKK LE VAAR -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Antags/Schutzstaffel/Characters/Askin.jpg" class="char-img"
+                                    alt="Askin Nakk Le Vaar">
+                                <img src="media/img/Antags/Schutzstaffel/VoiceActor/Shunsuke(Askin).jpg" class="va-img"
+                                    alt="Shunsuke Takeuchi">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Askin Nakk Le Vaar</h3>
+                                <p class="char-role">Quincy - Wandenreich - Schutzstaffel - Schrift D (The Deathdealing)
+                                </p>
+                                <p class="char-desc">
+                                    Askin Nakk Le Vaar is a member of the Schutzstaffel, Yhwach's
+                                    elite group of powerful Quincy soldiers. His ability, The
+                                    Deathdealing, allows him to manipulate the lethal dose of
+                                    substances affecting his opponents. Despite his casual and
+                                    laid-back attitude, he is a highly dangerous fighter who uses
+                                    intelligence and strategy to gain an advantage in battle.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Shunsuke Takeuchi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GERARD VALKYRIE -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Antags/Schutzstaffel/Characters/Gerard.jpg" class="char-img"
+                                    alt="Gerard Valkyrie">
+                                <img src="media/img/Antags/Schutzstaffel/VoiceActor/Tsuyoshi(Gerard).jpg" class="va-img"
+                                    alt="Tsuyoshi Koyama">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Gerard Valkyrie</h3>
+                                <p class="char-role">Quincy - Wandenreich - Schutzstaffel - Schrift M (The Miracle)</p>
+                                <p class="char-desc">
+                                    Gerard Valkyrie is a member of the Schutzstaffel and one of
+                                    Yhwach's most powerful soldiers. His Schrift, The Miracle,
+                                    allows him to turn seemingly impossible situations into
+                                    extraordinary advantages. With immense strength and endurance,
+                                    he becomes a major threat to the Soul Reapers during the war.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Tsuyoshi Koyama</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </section>
 
-            <!-- BACKGROUND/EXTRA CHARACTERS -->
-            <section class="bg-char">
-                
+
+            <!-- MISCELLANEOUS CHARACTERS / ANTIHEROES -->
+            <section id="miscellaneous">
+                <h2 class="sec-title">MISCELLANEOUS CHARACTERS</h2>
+
+                <!-- Justifies the grid. Makes it so that the last odd ending is centered-->
+                <div class="row g-4 justify-content-center">
+
+                    <!-- GRIMMJOW JAEGERJAQUEZ -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Antiheros/Arrancar/Characters/Grimmjow.jpg" class="char-img"
+                                    alt="Grimmjow Jaegerjaquez">
+                                <img src="media/img/Antiheros/Arrancar/VoiceActor/Junichi(Grimmjow).jpg" class="va-img"
+                                    alt="Junichi Suwabe">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Grimmjow Jaegerjaquez</h3>
+                                <p class="char-role">Arrancar - Former Espada 6</p>
+                                <p class="char-desc">
+                                    Grimmjow is a powerful Arrancar with a fierce personality and
+                                    an intense desire for battle. Although he is not aligned with
+                                    the Soul Reapers, he becomes an important ally against their
+                                    common enemies.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Junichi Suwabe</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NELLIEL TU ODELSCHWANCK -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Antiheros/Arrancar/Characters/Nelliel.jpg" class="char-img"
+                                    alt="Nelliel Tu Odelschwanck">
+                                <img src="media/img/Antiheros/Arrancar/VoiceActor/Arisa(Nelliel).jpg" class="va-img"
+                                    alt="Arisa Kiyoto">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Nelliel Tu Odelschwanck</h3>
+                                <p class="char-role">Arrancar - Former Espada 3</p>
+                                <p class="char-desc">
+                                    Nelliel is a kind-hearted Arrancar who values fairness and
+                                    dislikes unnecessary violence. Despite her gentle personality,
+                                    she possesses great strength and is willing to fight to protect
+                                    those she cares about.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Arisa Kiyoto</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TIER HARRIBEL -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Antiheros/Arrancar/Characters/Tier.jpg" class="char-img"
+                                    alt="Tier Harribel">
+                                <img src="media/img/Antiheros/Arrancar/VoiceActor/" class="va-img"
+                                    alt="Megumi Toyoguchi">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Tier Harribel</h3>
+                                <p class="char-role">Arrancar - Former Espada 3 - Ruler of Hueco Mundo</p>
+                                <p class="char-desc">
+                                    Tier Harribel is a powerful Arrancar known for her calm
+                                    personality and strong sense of loyalty. She values protecting
+                                    her companions and maintaining peace among the Arrancar.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Megumi Toyoguchi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SOSUKE AIZEN -->
+                    <div class="col-md-6">
+                        <div class="char-card">
+                            <div class="char-images">
+                                <img src="media/img/Antiheros/Shinigami/Characters/Aizen.jpg" class="char-img"
+                                    alt="Sosuke Aizen">
+                                <img src="media/img/Antiheros/Shinigami/VoiceActor/Show(Aizen).jpg" class="va-img"
+                                    alt="Shinichiro Miki">
+                            </div>
+
+                            <div class="char-info">
+                                <h3 class="char-name">Sosuke Aizen</h3>
+                                <p class="char-role">Soul Reaper - Former 5th Division Captain - King of Hueco Mundo</p>
+                                <p class="char-desc">
+                                    Sosuke Aizen is a highly intelligent and manipulative former Soul Reaper captain
+                                    who seeks to surpass the limits of a Soul Reaper. With his extraordinary spiritual
+                                    power and Zanpakuto, Kyoka Suigetsu, he remains a dangerous and influential figure
+                                    even while imprisoned in Muken.
+                                </p>
+                                <p class="char-va"><span>Voice Actor:</span> Shinichiro Miki</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
-            
-        </main>
 
-        <footer>
-            <!-- Website Details -->
-            <div class="footer-columns">
-                <div class="footer-brand">
-                    <!--Logo-->
-                    <img src=""class="footer-logo">
-                    <h1>Bleach</h1>
+        </div>
+    </main>
+
+    <!-- =============== FOOTER =============== -->
+    <!-- Used 3 bootstrap columns here. Still styled externally	-->
+    <footer>
+        <div class="container">
+            <div class="row">
+
+                <!-- Column 1: Logo, title, social media logos -->
+                <div class="col-md-4 footer-columns">
+                    <div class="footer-brand">
+                        <!--Logo-->
+                        <img src="" class="footer-logo" alt="Bleach Logo">
+                        <p class="footer-title">Bleach</p>
+                    </div>
+
+                    <!-- Social media logos -->
+                    <div class="socials-logo">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <img src="media/img/logos/fb.svg" alt="">
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <img src="media/img/logos/ig.svg" alt="">
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <img src="media/img/logos/yt.svg" alt="">
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Social Media Logos -->
-                <div class="socials-logo">
-                    
+                <!-- Devs😎 -->
+                <div class="col-md-4 footer-columns">
+                    <h3>Developed By:</h3>
+                    <p>Ramos, Erwin P.</p>
+                    <p>Andaya, Yasmine I.</p>
+                    <p>Dominno, Mark Jhaisser S.</p>
+                    <p>Mamaclay, Gerald V.</p>
                 </div>
-            </div>
 
-            <!-- Developers Column -->
-            <div class="footer-columns">
-                <h3>Developed By:</h3>
-                <p>Ramos, Erwin P.</p>
-                <p>Andaya, Yasmine I.</p>
-                <p>Dominno, Mark Jhaiser S.</p>
-                <p>Mamaclay, Gerald V.</p>
-            </div>
+                <!-- Links to page sections -->
+                <div class="col-md-4 footer-columns">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#top">Feature</a></li>
+                        <li><a href="characters.html#top">Characters</a></li>
+                        <li><a href="products.html#top">Products</a></li>
+                        <li><a href="index.html#cinema">Cinema</a></li>
+                    </ul>
+                </div>
 
-            <!-- Navigation Links -->
-            <div class="footer-columns">
-                <a href="index.html">Feature</a> <br>
-                <a href="#characters.html">Characters</a> <br>
-                <a href="products.html">Products</a>
-				<a href="#cinema">Cinema</a> <br>
             </div>
-        </footer>
+        </div>
+    </footer>
 
-    </body>
+    <!-- Bootstrap 5 JavaScript -->
+    <script src="rsc/js/bootstrap.bundle.min.js"></script>
+
+</body>
 </html>
