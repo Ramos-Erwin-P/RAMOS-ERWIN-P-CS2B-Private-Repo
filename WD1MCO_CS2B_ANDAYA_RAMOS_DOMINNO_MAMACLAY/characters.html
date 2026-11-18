@@ -7,8 +7,8 @@
     <title>Bleach</title>
 
     <!--
-        Font: Archivo Black
-        Actual font costs money
+		Font: Archivo Black
+    Actual font costs money
 	-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,43 +21,52 @@
 </head>
 
 <body id="top">
+    <!-- =============== HEADER =============== -->
     <header class="top-header">
+
         <div class="brand">
-            <!--Logo-->
+            <!-- Logo -->
             <img src="media/img/logos/logo.png" class="logo" alt="Bleach Logo">
             <h1><a href="index.html" class="head-title">Bleach</a></h1>
         </div>
 
         <!--
             Hamburger menu
-            data-bs-toggle="collapse" and data-bs-target="#mainNav" tells Bootstrap's JS
+            data-toggle="collapse" and data-target="#mainNav" tells Bootstrap's JS
             to show or hide the element with id="mainNav".
-		-->
-        <button class="nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        -->
+        <button class="nav-toggle" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+
             <span class="nav-toggle-bar"></span>
             <span class="nav-toggle-bar"></span>
             <span class="nav-toggle-bar"></span>
+
         </button>
 
         <!-- Navigation Menu. "collapse" hides it by default on phones; CSS keeps it visible on desktop -->
         <nav class="main-nav collapse" id="mainNav" aria-label="Main">
+
             <ul class="nav-list">
                 <li><a href="index.html#top">Feature</a></li>
                 <li><a href="characters.html#top" aria-current="page">Characters</a></li>
                 <li><a href="products.html#top">Products</a></li>
                 <li><a href="index.html#cinema">Cinema</a></li>
             </ul>
+
         </nav>
+
     </header>
+
 
     <!-- =============== MOVIE CHARACTERS =============== -->
     <main>
+
         <!--
-            Removed .container class for main. Bootstrap adds a 15px side padding,
-            fixed max-width, auto margins, and interrupts design flow.
-            This keeps hero at full width.
-	    -->
+        Removed .container class for main. Bootstrap adds a 15px side padding,
+        fixed max-width, auto margins, and interrupts design flow.
+        This keeps hero at full width.
+    -->
 
         <!-- HERO SECTION -->
         <section class="hero-section">
@@ -83,11 +92,11 @@
             <section id="protagonists">
                 <h2 class="sec-title">PROTAGONISTS</h2>
 
-                <!-- Justifies the grid. Makes it so that the last odd ending is centered-->
-                <div class="row g-4 justify-content-center">
+                <!-- Two cards per row on medium screens and larger -->
+                <div class="row justify-content-center char-grid">
 
                     <!-- ICHIGO KUROSAKI -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/Main/Characters/Ichigo.jpg" class="char-img"
@@ -95,7 +104,6 @@
                                 <img src="media/img/Protags/Main/VoiceActor/Masakazu(Ichigo).jpg" class="va-img"
                                     alt="Masakazu Morita">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Ichigo Kurosaki</h3>
                                 <p class="char-role">Human - Substitute Soul Reaper - Quincy - Hollow Hybrid</p>
@@ -113,7 +121,7 @@
                     </div>
 
                     <!-- ORIHIME INOUE -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/Main/Characters/Orihime.jpg" class="char-img"
@@ -121,7 +129,6 @@
                                 <img src="media/img/Protags/Main/VoiceActor/Yuki(Orihime).jpg" class="va-img"
                                     alt="Yuki Matsuoka">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Orihime Inoue</h3>
                                 <p class="char-role">Human - Shun Shun Rikka</p>
@@ -139,7 +146,7 @@
                     </div>
 
                     <!-- YASUTORA SADO -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/Main/Characters/Chad.jpg" class="char-img"
@@ -147,7 +154,6 @@
                                 <img src="media/img/Protags/Main/VoiceActor/Hiroki(Chad).jpg" class="va-img"
                                     alt="Hiroki Yasumoto">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Yasutora Sado (Chad)</h3>
                                 <p class="char-role">Human - Fullbringer</p>
@@ -164,7 +170,7 @@
                     </div>
 
                     <!-- URYU ISHIDA -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/Main/Characters/Uryu.jpg" class="char-img"
@@ -172,7 +178,6 @@
                                 <img src="media/img/Protags/Main/VoiceActor/Noriaki(Uryu).jpg" class="va-img"
                                     alt="Noriaki Sugiyama">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Uryu Ishida</h3>
                                 <p class="char-role">Quincy - Wandenreich - Sternritter A (The Antithesis)</p>
@@ -190,7 +195,7 @@
                     </div>
 
                     <!-- RUKIA KUCHIKI -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/Main/Characters/Rukia.jpg" class="char-img"
@@ -198,7 +203,6 @@
                                 <img src="media/img/Protags/Main/VoiceActor/Fumiko(Rukia).jpg" class="va-img"
                                     alt="Fumiko Orikasa">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Rukia Kuchiki</h3>
                                 <p class="char-role">Soul Reaper - Gotei 13 - 13th Division Lieutenant</p>
@@ -216,7 +220,7 @@
                     </div>
 
                     <!-- RENJI ABARAI -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/Main/Characters/Renji.jpg" class="char-img"
@@ -224,7 +228,6 @@
                                 <img src="media/img/Protags/Main/VoiceActor/Kentaro(Renji).jpg" class="va-img"
                                     alt="Kentarou Itou">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Renji Abarai</h3>
                                 <p class="char-role">Soul Reaper - Gotei 13 - 6th Division Lieutenant</p>
@@ -241,7 +244,7 @@
                     </div>
 
                     <!-- ICHIBE HYOSUBE -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadZero/Characters/Ichibe.jpg" class="char-img"
@@ -249,7 +252,6 @@
                                 <img src="media/img/Protags/SquadZero/VoiceActor/Naomi(Ichibe).jpg" class="va-img"
                                     alt="Naomi Kusumi">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Ichibe Hyosube</h3>
                                 <p class="char-role">Soul Reaper - Squad Zero - Commander</p>
@@ -266,7 +268,7 @@
                     </div>
 
                     <!-- OETSU NIMAIYA -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadZero/Characters/Oetsu.jpg" class="char-img"
@@ -274,7 +276,6 @@
                                 <img src="media/img/Protags/SquadZero/VoiceActor/Yoji(Oetsu).jpg" class="va-img"
                                     alt="Yoji Ueda">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Oetsu Nimaiya</h3>
                                 <p class="char-role">Soul Reaper - Squad Zero - Blade God</p>
@@ -291,7 +292,7 @@
                     </div>
 
                     <!-- TENJIRO KIRINJI -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadZero/Characters/Tenjiro.jpg" class="char-img"
@@ -299,7 +300,6 @@
                                 <img src="media/img/Protags/SquadZero/VoiceActor/Tomoyuki(Tenjiro).jpg" class="va-img"
                                     alt="Tomoyuki Shimura">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Tenjiro Kirinji</h3>
                                 <p class="char-role">Soul Reaper - Squad Zero - Divine General of the East</p>
@@ -316,7 +316,7 @@
                     </div>
 
                     <!-- KIRIO HIKIFUNE -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadZero/Characters/Kirio.jpg" class="char-img"
@@ -324,7 +324,6 @@
                                 <img src="media/img/Protags/SquadZero/VoiceActor/Ayumi(Kirio).jpg" class="va-img"
                                     alt="Ayumi Tsunematsu">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Kirio Hikifune</h3>
                                 <p class="char-role">Soul Reaper - Squad Zero - Ruler of Grain</p>
@@ -342,7 +341,7 @@
                     </div>
 
                     <!-- SENJUMARU SHUTARA -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadZero/Characters/Senjumaru.jpg" class="char-img"
@@ -350,7 +349,6 @@
                                 <img src="media/img/Protags/SquadZero/VoiceActor/Rina(Senjumaru).jpg" class="va-img"
                                     alt="Rina Sato">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Senjumaru Shutara</h3>
                                 <p class="char-role">Soul Reaper - Squad Zero - Great Weaver</p>
@@ -367,7 +365,7 @@
                     </div>
 
                     <!-- SHUNSUI KYORAKU -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadCaptains/Characters/Shunsui.jpg" class="char-img"
@@ -375,7 +373,6 @@
                                 <img src="media/img/Protags/SquadCaptains/VoiceActor/Akio(Shunsui).jpg" class="va-img"
                                     alt="Akio Otsuka">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Shunsui Kyoraku</h3>
                                 <p class="char-role">Soul Reaper - Gotei 13 - 1st Division Captain / Head Captain</p>
@@ -393,7 +390,7 @@
                     </div>
 
                     <!-- SOI FON -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadCaptains/Characters/Soi.jpg" class="char-img"
@@ -401,7 +398,6 @@
                                 <img src="media/img/Protags/SquadCaptains/VoiceActor/Houko(Soi).jpg" class="va-img"
                                     alt="Houko Kuwashima">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Soi Fon</h3>
                                 <p class="char-role">Soul Reaper - Gotei 13 - 2nd Division Captain</p>
@@ -418,7 +414,7 @@
                     </div>
 
                     <!-- ROJURO OTOBASHI -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadCaptains/Characters/Rojuro.jpg" class="char-img"
@@ -426,7 +422,6 @@
                                 <img src="media/img/Protags/SquadCaptains/VoiceActor/Shouto(Rojuro).jpg" class="va-img"
                                     alt="Shouto Kashii">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Rojuro Otoribashi</h3>
                                 <p class="char-role">Soul Reaper - Gotei 13 - 3rd Division Captain</p>
@@ -443,7 +438,7 @@
                     </div>
 
                     <!-- ISANE KOTETSU -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadCaptains/Characters/Isane.jpg" class="char-img"
@@ -451,7 +446,6 @@
                                 <img src="media/img/Protags/SquadCaptains/VoiceActor/Yukana(Isane).jpg" class="va-img"
                                     alt="Yukana">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Isane Kotetsu</h3>
                                 <p class="char-role">Soul Reaper - Gotei 13 - 4th Division Lieutenant</p>
@@ -469,7 +463,7 @@
                     </div>
 
                     <!-- SHINJI HIRAKO -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadCaptains/Characters/Shinji.jpg" class="char-img"
@@ -477,7 +471,6 @@
                                 <img src="media/img/Protags/SquadCaptains/VoiceActor/Masaya(Shinji).jpg" class="va-img"
                                     alt="Masaya Onosaka">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Shinji Hirako</h3>
                                 <p class="char-role">Soul Reaper - Gotei 13 - 5th Division Captain</p>
@@ -495,7 +488,7 @@
                     </div>
 
                     <!-- BYAKUYA KUCHIKI -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadCaptains/Characters/Byakuya.jpg" class="char-img"
@@ -503,7 +496,6 @@
                                 <img src="media/img/Protags/SquadCaptains/VoiceActor/Ryotaro(Byakuya).jpg"
                                     class="va-img" alt="Ryotaro Okiayu">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Byakuya Kuchiki</h3>
                                 <p class="char-role">Soul Reaper - Gotei 13 - 6th Division Captain</p>
@@ -522,7 +514,7 @@
                     </div>
 
                     <!-- TETSUZAEMON IBA -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadCaptains/Characters/Tetsuzaemon.jpg" class="char-img"
@@ -530,7 +522,6 @@
                                 <img src="media/img/Protags/SquadCaptains/VoiceActor/Nishirin(Tetsuzaemon).jpg"
                                     class="va-img" alt="Rintaro Nishi">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Tetsuzaemon Iba</h3>
                                 <p class="char-role">Soul Reaper - Gotei 13 - 7th Division Lieutenant</p>
@@ -548,7 +539,7 @@
                     </div>
 
                     <!-- LISA YADOMARU -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadCaptains/Characters/Lisa.jpg" class="char-img"
@@ -556,7 +547,6 @@
                                 <img src="media/img/Protags/SquadCaptains/VoiceActor/Sayori(Lisa).jpg" class="va-img"
                                     alt="Sayori Ishizuka">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Lisa Yadomaru</h3>
                                 <p class="char-role">Soul Reaper - Former 8th Division Lieutenant - Visored</p>
@@ -574,7 +564,7 @@
                     </div>
 
                     <!-- TOSHIRO HITSUGAYA -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadCaptains/Characters/Toshiro.jpg" class="char-img"
@@ -582,7 +572,6 @@
                                 <img src="media/img/Protags/SquadCaptains/VoiceActor/Romi(Toshiro).jpg" class="va-img"
                                     alt="Romi Park">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Toshiro Hitsugaya</h3>
                                 <p class="char-role">Soul Reaper - Gotei 13 - 10th Division Captain</p>
@@ -600,7 +589,7 @@
                     </div>
 
                     <!-- KENPACHI ZARAKI -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadCaptains/Characters/Kenpachi.jpg" class="char-img"
@@ -608,7 +597,6 @@
                                 <img src="media/img/Protags/SquadCaptains/VoiceActor/Fumihiko(Kenpachi).jpg"
                                     class="va-img" alt="Fumihiko Tachiki">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Kenpachi Zaraki</h3>
                                 <p class="char-role">Soul Reaper - Gotei 13 - 11th Division Captain</p>
@@ -626,7 +614,7 @@
                     </div>
 
                     <!-- MAYURI KUROTSUCHI -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadCaptains/Characters/Mayuri.jpg" class="char-img"
@@ -634,7 +622,6 @@
                                 <img src="media/img/Protags/SquadCaptains/VoiceActor/Ryusei(Mayuri).jpg" class="va-img"
                                     alt="Ryusei Nakao">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Mayuri Kurotsuchi</h3>
                                 <p class="char-role">Soul Reaper - Gotei 13 - 12th Division Captain</p>
@@ -653,7 +640,7 @@
                     </div>
 
                     <!-- JUSHIRO UKITAKE -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/SquadCaptains/Characters/Jushiro.jpg" class="char-img"
@@ -661,7 +648,6 @@
                                 <img src="media/img/Protags/SquadCaptains/VoiceActor/Hideo(Jushiro).jpg" class="va-img"
                                     alt="Hideo Ishikawa">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Jushiro Ukitake</h3>
                                 <p class="char-role">Soul Reaper - Gotei 13 - 13th Division Captain</p>
@@ -680,7 +666,7 @@
                     </div>
 
                     <!-- KISUKE URAHARA -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/Gotei13/Characters/Kisuke.jpg" class="char-img"
@@ -688,7 +674,6 @@
                                 <img src="media/img/Protags/Gotei13/VoiceActor/Shinichiro(Kisuke).jpg" class="va-img"
                                     alt="Shinichiro Miki">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Kisuke Urahara</h3>
                                 <p class="char-role">Soul Reaper - Former 12th Division Captain</p>
@@ -707,7 +692,7 @@
                     </div>
 
                     <!-- YORUICHI SHIHOIN -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Protags/Gotei13/Characters/Yoruichi.jpg" class="char-img"
@@ -715,11 +700,11 @@
                                 <img src="media/img/Protags/Gotei13/VoiceActor/Satsuki(Yoruichi).jpg" class="va-img"
                                     alt="Satsuki Yukino">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Yoruichi Shihoin</h3>
-                                <p class="char-role">Soul Reaper - Former 2nd Division Captain - Former Stealth Force
-                                    Commander</p>
+                                <p class="char-role">
+                                    Soul Reaper - Former 2nd Division Captain - Former Stealth Force Commander
+                                </p>
                                 <p class="char-desc">
                                     Yoruichi Shihoin is a former captain of the 2nd Division and
                                     commander of the Stealth Force. She is known for her exceptional
@@ -737,16 +722,14 @@
                 </div>
             </section>
 
-
             <!-- ANTAGONISTS -->
             <section id="antagonists">
                 <h2 class="sec-title">ANTAGONISTS</h2>
 
-                <!-- Justifies the grid. Makes it so that the last odd ending is centered-->
-                <div class="row g-4 justify-content-center">
+                <div class="row justify-content-center char-grid">
 
                     <!-- YHWACH -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Antags/Schutzstaffel/Characters/Yhwach.jpg" class="char-img"
@@ -754,7 +737,6 @@
                                 <img src="media/img/Antags/Schutzstaffel/VoiceActor/Takayuki(Yhwach).jpg" class="va-img"
                                     alt="Takayuki Sugo">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Yhwach</h3>
                                 <p class="char-role">Quincy - Wandenreich - Emperor - Schrift A (The Almighty)</p>
@@ -772,7 +754,7 @@
                     </div>
 
                     <!-- JUGRAM HASCHWALTH -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Antags/Schutzstaffel/Characters/Jugram.jpg" class="char-img"
@@ -780,11 +762,11 @@
                                 <img src="media/img/Antags/Schutzstaffel/VoiceActor/Yuichiro(Jugram).jpg" class="va-img"
                                     alt="Yuuichirou Umehara">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Jugram Haschwalth</h3>
-                                <p class="char-role">Quincy - Wandenreich - Sternritter Grandmaster - Schrift B (The
-                                    Balance)</p>
+                                <p class="char-role">
+                                    Quincy - Wandenreich - Sternritter Grandmaster - Schrift B (The Balance)
+                                </p>
                                 <p class="char-desc">
                                     Jugram Haschwalth is Yhwach's right-hand man and the Grandmaster
                                     of the Sternritter. He possesses The Balance, an ability that
@@ -798,7 +780,7 @@
                     </div>
 
                     <!-- ASKIN NAKK LE VAAR -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Antags/Schutzstaffel/Characters/Askin.jpg" class="char-img"
@@ -806,10 +788,10 @@
                                 <img src="media/img/Antags/Schutzstaffel/VoiceActor/Shunsuke(Askin).jpg" class="va-img"
                                     alt="Shunsuke Takeuchi">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Askin Nakk Le Vaar</h3>
-                                <p class="char-role">Quincy - Wandenreich - Schutzstaffel - Schrift D (The Deathdealing)
+                                <p class="char-role">
+                                    Quincy - Wandenreich - Schutzstaffel - Schrift D (The Deathdealing)
                                 </p>
                                 <p class="char-desc">
                                     Askin Nakk Le Vaar is a member of the Schutzstaffel, Yhwach's
@@ -825,7 +807,7 @@
                     </div>
 
                     <!-- GERARD VALKYRIE -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Antags/Schutzstaffel/Characters/Gerard.jpg" class="char-img"
@@ -833,10 +815,11 @@
                                 <img src="media/img/Antags/Schutzstaffel/VoiceActor/Tsuyoshi(Gerard).jpg" class="va-img"
                                     alt="Tsuyoshi Koyama">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Gerard Valkyrie</h3>
-                                <p class="char-role">Quincy - Wandenreich - Schutzstaffel - Schrift M (The Miracle)</p>
+                                <p class="char-role">
+                                    Quincy - Wandenreich - Schutzstaffel - Schrift M (The Miracle)
+                                </p>
                                 <p class="char-desc">
                                     Gerard Valkyrie is a member of the Schutzstaffel and one of
                                     Yhwach's most powerful soldiers. His Schrift, The Miracle,
@@ -852,16 +835,14 @@
                 </div>
             </section>
 
-
             <!-- MISCELLANEOUS CHARACTERS / ANTIHEROES -->
             <section id="miscellaneous">
                 <h2 class="sec-title">MISCELLANEOUS CHARACTERS</h2>
 
-                <!-- Justifies the grid. Makes it so that the last odd ending is centered-->
-                <div class="row g-4 justify-content-center">
+                <div class="row justify-content-center char-grid">
 
                     <!-- GRIMMJOW JAEGERJAQUEZ -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Antiheros/Arrancar/Characters/Grimmjow.jpg" class="char-img"
@@ -869,7 +850,6 @@
                                 <img src="media/img/Antiheros/Arrancar/VoiceActor/Junichi(Grimmjow).jpg" class="va-img"
                                     alt="Junichi Suwabe">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Grimmjow Jaegerjaquez</h3>
                                 <p class="char-role">Arrancar - Former Espada 6</p>
@@ -885,7 +865,7 @@
                     </div>
 
                     <!-- NELLIEL TU ODELSCHWANCK -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Antiheros/Arrancar/Characters/Nelliel.jpg" class="char-img"
@@ -893,7 +873,6 @@
                                 <img src="media/img/Antiheros/Arrancar/VoiceActor/Arisa(Nelliel).jpg" class="va-img"
                                     alt="Arisa Kiyoto">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Nelliel Tu Odelschwanck</h3>
                                 <p class="char-role">Arrancar - Former Espada 3</p>
@@ -909,7 +888,7 @@
                     </div>
 
                     <!-- TIER HARRIBEL -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Antiheros/Arrancar/Characters/Tier.jpg" class="char-img"
@@ -917,7 +896,6 @@
                                 <img src="media/img/Antiheros/Arrancar/VoiceActor/" class="va-img"
                                     alt="Megumi Toyoguchi">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Tier Harribel</h3>
                                 <p class="char-role">Arrancar - Former Espada 3 - Ruler of Hueco Mundo</p>
@@ -932,7 +910,7 @@
                     </div>
 
                     <!-- SOSUKE AIZEN -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="char-card">
                             <div class="char-images">
                                 <img src="media/img/Antiheros/Shinigami/Characters/Aizen.jpg" class="char-img"
@@ -940,10 +918,11 @@
                                 <img src="media/img/Antiheros/Shinigami/VoiceActor/Show(Aizen).jpg" class="va-img"
                                     alt="Shinichiro Miki">
                             </div>
-
                             <div class="char-info">
                                 <h3 class="char-name">Sosuke Aizen</h3>
-                                <p class="char-role">Soul Reaper - Former 5th Division Captain - King of Hueco Mundo</p>
+                                <p class="char-role">
+                                    Soul Reaper - Former 5th Division Captain - King of Hueco Mundo
+                                </p>
                                 <p class="char-desc">
                                     Sosuke Aizen is a highly intelligent and manipulative former Soul Reaper captain
                                     who seeks to surpass the limits of a Soul Reaper. With his extraordinary spiritual
@@ -954,14 +933,16 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
 
         </div>
     </main>
 
+
     <!-- =============== FOOTER =============== -->
-    <!-- Used 3 bootstrap columns here. Still styled externally	-->
+    <!-- Used 3 Bootstrap columns here. Still styled externally -->
     <footer>
         <div class="container">
             <div class="row">
@@ -969,8 +950,8 @@
                 <!-- Column 1: Logo, title, social media logos -->
                 <div class="col-md-4 footer-columns">
                     <div class="footer-brand">
-                        <!--Logo-->
-                        <img src="" class="footer-logo" alt="Bleach Logo">
+                        <!-- Logo -->
+                        <img src="media/img/logos/logo.png" class="footer-logo" alt="Bleach Logo">
                         <p class="footer-title">Bleach</p>
                     </div>
 
@@ -979,16 +960,18 @@
                         <a href="#" class="social-link" aria-label="Facebook">
                             <img src="media/img/logos/fb.svg" alt="">
                         </a>
+
                         <a href="#" class="social-link" aria-label="Instagram">
                             <img src="media/img/logos/ig.svg" alt="">
                         </a>
+
                         <a href="#" class="social-link" aria-label="YouTube">
                             <img src="media/img/logos/yt.svg" alt="">
                         </a>
                     </div>
                 </div>
 
-                <!-- Devs😎 -->
+                <!-- Column 2: Developers -->
                 <div class="col-md-4 footer-columns">
                     <h3>Developed By:</h3>
                     <p>Ramos, Erwin P.</p>
@@ -997,9 +980,10 @@
                     <p>Mamaclay, Gerald V.</p>
                 </div>
 
-                <!-- Links to page sections -->
+                <!-- Column 3: Navigation links -->
                 <div class="col-md-4 footer-columns">
                     <h3>Explore</h3>
+
                     <ul class="footer-links">
                         <li><a href="index.html#top">Feature</a></li>
                         <li><a href="characters.html#top">Characters</a></li>
@@ -1012,8 +996,12 @@
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JavaScript -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+    <!-- Bootstrap 4.4.1 Bundle -->
     <script src="rsc/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
