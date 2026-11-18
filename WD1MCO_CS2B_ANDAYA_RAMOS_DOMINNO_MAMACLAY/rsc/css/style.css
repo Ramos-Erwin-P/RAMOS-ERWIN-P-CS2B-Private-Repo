@@ -83,7 +83,7 @@ main {
     var(--ink);
 }
 
-main>.container {
+main > .container {
   padding-top: 1rem;
   padding-bottom: 4rem;
 }
@@ -137,6 +137,20 @@ main section[id] {
   margin: 0;
   font-size: 2rem;
   letter-spacing: 0.02em;
+}
+
+/* Header title link */
+.brand h1 a.head-title {
+  color: var(--cream);
+  text-decoration: none;
+}
+
+/* Keep the title white when hovering or clicking */
+.brand h1 a.head-title:hover,
+.brand h1 a.head-title:focus,
+.brand h1 a.head-title:active {
+  color: var(--cream);
+  text-decoration: none;
 }
 
 .logo {
@@ -231,40 +245,10 @@ main section[id] {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Phones and small tablets (under 768px) */
-@media (max-width: 767.98px) {
-  .nav-toggle {
-    display: flex;
-  }
 
-  /* Menu drops below the logo row at full width */
-  .top-header .main-nav {
-    flex: 0 0 100%;
-  }
-
-  /* Links stack vertically with a divider between them */
-  .nav-list {
-    flex-direction: column;
-    gap: 0;
-    padding: 0.5rem 0 1rem;
-  }
-
-  .nav-list a {
-    display: block;
-    padding: 0.8rem 0;
-    border-top: 1px solid var(--line);
-  }
-}
-
-/* Desktop (768px and up): menu is always visible, regardless of the collapse state */
-/* !important makes the declarations that they indicate win over any normal declaration. Almost like hierarchy. */
-@media (min-width: 768px) {
-  .top-header .main-nav {
-    display: block !important;
-    height: auto !important;
-  }
-}
-
+/* ===================================== */
+/* FEATURE PAGE */
+/* ===================================== */
 
 /* hero */
 .hero-section {
@@ -316,7 +300,7 @@ main section[id] {
 }
 
 
-/* Information secton */
+/* Information section */
 .info-poster {
   display: block;
   width: 100%;
@@ -358,19 +342,10 @@ main section[id] {
   background: var(--ink-3);
 }
 
-/* On phones the poster is full width and keeps it from getting too tall */
-@media (max-width: 767.98px) {
-  .info-poster {
-    max-height: 420px;
-    object-fit: cover;
-    object-position: top;
-  }
-}
-
 
 /* Highlights carousel */
 
-/* This prevented the jumping that happened when clicking the buttons on the carousel*/
+/* This prevented the jumping that happened when clicking the buttons on the carousel */
 .mov-highlights {
   overflow-anchor: none;
 }
@@ -437,7 +412,7 @@ main section[id] {
 
 /* VA and Characters Grid */
 /* Space between rows since Bootstrap columns only add side padding */
-.artists-grid>[class*="col-"] {
+.artists-grid > [class*="col-"] {
   margin-bottom: 1.5rem;
 }
 
@@ -483,7 +458,7 @@ main section[id] {
 }
 
 
-/* Credits and cinema lists are same styled lists*/
+/* Credits and cinema lists are same styled lists */
 .credits-list,
 .cinema-list {
   margin: 0;
@@ -533,24 +508,189 @@ main section[id] {
   text-align: right;
 }
 
-@media (max-width: 575.98px) {
-  .credits-list li {
-    flex-direction: column;
-    gap: 0.1rem;
-  }
 
-  .cinema-list li {
-    grid-template-columns: 1fr;
-    gap: 0.15rem;
-  }
+/* ===================================== */
+/* CHARACTERS PAGE */
+/* ===================================== */
 
-  .cinema-times {
-    text-align: left;
-  }
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* hero heading */
+.hero-content h1 {
+  font-size: clamp(2rem, 4vw, 2.625rem);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.06em;
+  color: var(--cream);
+}
+
+/* hero subtitle */
+.hero-content p {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--sand);
+  margin-bottom: 1.875rem;
+}
+
+/* character categories */
+.hero-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.9375rem;
+}
+
+/* character category button style */
+.hero-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--orange);
+  color: var(--ink-deep);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* change color when hovered */
+.hero-btn:hover {
+  background-color: var(--gold);
+  color: var(--ink);
+  transform: translateY(-3px);
+}
+
+/* CHARACTER SECTIONS */
+#protagonists,
+#antagonists,
+#miscellaneous {
+  padding: 3rem 0 5rem;
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+}
+
+/* Section title styling */
+.sec-title {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: var(--cream);
+  letter-spacing: 0.04em;
+}
+
+/* CHARACTER CARDS */
+.char-card {
+  height: 100%;
+  padding: 1.5625rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background: var(--ink-2);
+  color: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Card hover effect */
+.char-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--orange);
+  box-shadow: 0 8px 24px rgba(240, 138, 50, 0.12);
+}
+
+/* CHARACTER IMAGES */
+
+/* Image container, */
+.char-images {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Character image */
+.char-img {
+  width: 65%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--ink-3);
+}
+
+/* Voice actor image */
+.va-img {
+  width: 30%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--ink-3);
+}
+
+/* CHARACTER DETAILS */
+
+.char-info {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Character name */
+.char-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 0.3125rem;
+}
+
+/* Character role subtitle-like */
+.char-role {
+  font-size: 0.8125rem;
+  color: var(--sand);
+  font-weight: 500;
+  margin-bottom: 0.9375rem;
+  text-align: center;
+}
+
+/* Character description */
+.char-desc {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--cream);
+  text-align: center;
+  margin-bottom: 0.9375rem;
+}
+
+/* Voice actor subtitle-like */
+.char-va {
+  font-size: 0.9375rem;
+  color: var(--sand);
+  margin-top: auto;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* Voice actor label */
+.char-va span {
+  font-weight: 700;
+  color: var(--spirit-light);
 }
 
 
+/* ===================================== */
 /* FOOTER */
+/* ===================================== */
+
 footer {
   position: relative;
   padding: 3.5rem 0 2rem;
@@ -576,12 +716,6 @@ footer::before {
   gap: 2.5rem 3rem;
   align-items: start;
   /* each column starts at the top */
-}
-
-@media (max-width: 575.98px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .footer-columns h3 {
@@ -658,6 +792,168 @@ footer::before {
 
 .footer-links a:hover {
   color: var(--orange);
+}
+
+
+/* ===================================== */
+/* RESPONSIVE DESIGN */
+/* ===================================== */
+
+/* Phones and small tablets (under 768px) */
+@media (max-width: 767.98px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Menu drops below the logo row at full width */
+  .top-header .main-nav {
+    flex: 0 0 100%;
+  }
+
+  /* Links stack vertically with a divider between them */
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0 1rem;
+  }
+
+  .nav-list a {
+    display: block;
+    padding: 0.8rem 0;
+    border-top: 1px solid var(--line);
+  }
+
+  /* On phones the poster is full width and keeps it from getting too tall */
+  .info-poster {
+    max-height: 420px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  /* Character page hero */
+  body:not(:has(.hero-vid)) .hero-section {
+    padding: 3.75rem 1.25rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9375rem;
+  }
+
+  #protagonists,
+  #antagonists,
+  #miscellaneous {
+    padding: 2.5rem 0.9375rem 4.0625rem;
+  }
+
+  .sec-title {
+    font-size: 2rem;
+    margin-bottom: 2.1875rem;
+  }
+
+  .char-card {
+    padding: 1.25rem;
+  }
+
+  .char-img,
+  .va-img {
+    height: 230px;
+  }
+
+  .char-name {
+    font-size: 1.375rem;
+  }
+}
+
+
+/* Desktop (768px and up): menu is always visible, regardless of the collapse state */
+/* !important makes the declarations that they indicate win over any normal declaration. Almost like hierarchy. */
+@media (min-width: 768px) {
+  .top-header .main-nav {
+    display: block !important;
+    height: auto !important;
+  }
+}
+
+
+/* Mobile phones */
+@media (max-width: 575.98px) {
+  .credits-list li {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .cinema-list li {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .cinema-times {
+    text-align: left;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Character page hero */
+  body:not(:has(.hero-vid)) .hero-section {
+    padding: 2.8125rem 0.9375rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.625rem;
+  }
+
+  .hero-content p {
+    font-size: 0.875rem;
+  }
+
+  .hero-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  #protagonists,
+  #antagonists,
+  #miscellaneous {
+    padding: 2.1875rem 0.75rem 3.4375rem;
+  }
+
+  .sec-title {
+    font-size: 1.6875rem;
+    margin-bottom: 1.5625rem;
+  }
+
+  .char-card {
+    padding: 1.125rem;
+  }
+
+  .char-img,
+  .va-img {
+    height: 200px;
+  }
+
+  .char-name {
+    font-size: 1.25rem;
+  }
+
+  .char-desc {
+    font-size: 0.875rem;
+  }
+
+  .char-role,
+  .char-va {
+    font-size: 0.75rem;
+  }
 }
 
 
