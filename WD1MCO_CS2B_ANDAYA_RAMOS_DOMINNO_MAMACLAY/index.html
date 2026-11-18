@@ -37,8 +37,9 @@
 		<!-- HERO -->
 		<section class="hero-section">
 			<div class="background">
-				<video class="hero-vid" autoplay muted loop>
-					<source src="media/vids/hero-av1.mp4">
+				<video class="hero-vid" autoplay muted loop playsinline preload="metadata">
+					<source src="media/vids/hero-av1.mp4"> <!--Main format-->
+					<source src="media/vids/hero-h264.mp4"> <!--Added H.264 fallback for compatability-->
 				</video>
 			</div>
 		</section>
@@ -75,8 +76,8 @@
 							</div>
 
 							<div class="info-images">
-								<img src="" alt="Still image 1">
-								<img src="" alt="Still image 2">
+								<img src="media/img/stills/still1.jpg" alt="Still image 1">
+								<img src="media/img/stills/still2.jpg" alt="Still image 2">
 								<img src="" alt="Still image 3">
 							</div>
 						</div>
@@ -196,9 +197,9 @@
 					<div class="col-12 col-md-6">
 						<div class="card artist-card">
 							<div class="artist-images">
-								<img src="media/img/MainCharacters/VoiceActor/Masakazu(Ichigo).jpg" class="actor-img"
+								<img src="media/img/Protags/Main/VoiceActor/Masakazu(Ichigo).jpg" class="actor-img"
 									alt="Voice Actor Name Here">
-								<img src="media/img/MainCharacters/Characters/Ichigo.jpg" class="character-img" alt="Character Name">
+								<img src="media/img/Protags/Main/Characters/Ichigo.jpg" class="character-img" alt="Character Name">
 							</div>
 						</div>
 						<!-- Text card below image -->
@@ -211,9 +212,10 @@
 					<div class="col-12 col-md-6">
 						<div class="card artist-card">
 							<div class="artist-images">
-								<img src="media/img/Shinigami/VoiceActor/shinichiro(Kisuke).jpg" class="actor-img"
+								<img src="media/img/Protags/SquadCaptains/VoiceActor/Fumihiko(Kenpachi).jpg" class="actor-img"
 									alt="Voice Actor Name Here">
-								<img src="media/img/Shinigami/Characters/kisuke.jpg" class="character-img" alt="Character Name">
+								<img src="media/img/Protags/SquadCaptains/Characters/Kenpachi.jpg" class="character-img"
+									alt="Character Name">
 							</div>
 						</div>
 						<!-- Text card below image -->
@@ -226,9 +228,9 @@
 					<div class="col-12 col-md-6">
 						<div class="card artist-card">
 							<div class="artist-images">
-								<img src="media/img/Shinigami/VoiceActor/Tachiki(Kenpachi).jpg" class="actor-img"
+								<img src="media/img/Protags/SquadZero/VoiceActor/Naomi(Ichibe).jpg" class="actor-img"
 									alt="Voice Actor Name Here">
-								<img src="media/img/Shinigami/Characters/Kenpachi.jpg" class="character-img" alt="Character Name">
+								<img src="media/img/Protags/SquadZero/Characters/Ichibe.jpg" class="character-img" alt="Character Name">
 							</div>
 						</div>
 						<!-- Text card below image -->
@@ -241,23 +243,10 @@
 					<div class="col-12 col-md-6">
 						<div class="card artist-card">
 							<div class="artist-images">
-								<img src="media/img/Visored/VoiceActor/Hayami(Aizen).png" class="actor-img" alt="Voice Actor Name Here">
-								<img src="media/img/Visored/Characters/Aizen.jpg" class="character-img" alt="Character Name">
-							</div>
-						</div>
-						<!-- Text card below image -->
-						<div class="card-body">
-							<h3 class=card-title artist-name>Actor Name</h3>
-							<p class="card-text artist-role"> as Character</p>
-						</div>
-					</div>
-
-					<div class="col-12 col-md-6">
-						<div class="card artist-card">
-							<div class="artist-images">
-								<img src="media/img/SquadZero/VoiceActor/Naomi(Ichibe).jpg" class="actor-img"
+								<img src="media/img/Antiheros/Shinigami/VoiceActor/Show(Aizen).jpg" class="actor-img"
 									alt="Voice Actor Name Here">
-								<img src="media/img/SquadZero/Characters/Ichibe.jpg" class="character-img" alt="Character Name">
+								<img src="media/img/Antiheros/Shinigami/Characters/Aizen.jpg" class="character-img"
+									alt="Character Name">
 							</div>
 						</div>
 						<!-- Text card below image -->
@@ -270,8 +259,25 @@
 					<div class="col-12 col-md-6">
 						<div class="card artist-card">
 							<div class="artist-images">
-								<img src="media/img/Quincies/VoiceActor/Takayuki(Yhwach).jpg" class="actor-img" alt="Voice Actor Name Here">
-								<img src="media/img/Quincies/Characters/Yhwach.jpg" class="character-img" alt="Character Name">
+								<img src="media/img/Protags/Gotei13/VoiceActor/Shinichiro(Kisuke).jpg" class="actor-img"
+									alt="Voice Actor Name Here">
+								<img src="media/img/Protags/Gotei13/Characters/Kisuke.jpg" class="character-img" alt="Character Name">
+							</div>
+						</div>
+						<!-- Text card below image -->
+						<div class="card-body">
+							<h3 class=card-title artist-name>Actor Name</h3>
+							<p class="card-text artist-role"> as Character</p>
+						</div>
+					</div>
+
+					<div class="col-12 col-md-6">
+						<div class="card artist-card">
+							<div class="artist-images">
+								<img src="media/img/Antags/Schutzstaffel/VoiceActor/Takayuki(Yhwach).jpg" class="actor-img"
+									alt="Voice Actor Name Here">
+								<img src="media/img/Antags/Schutzstaffel/Characters/Yhwach.jpg" class="character-img"
+									alt="Character Name">
 							</div>
 						</div>
 						<!-- Text card below image -->
