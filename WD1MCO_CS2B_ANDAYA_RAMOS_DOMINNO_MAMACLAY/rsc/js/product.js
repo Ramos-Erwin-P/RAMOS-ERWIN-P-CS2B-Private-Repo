@@ -345,5 +345,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initial cart display
     updateCart();
-
 });
