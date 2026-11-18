@@ -1,14 +1,684 @@
-/* Place the actor and character images side by side */
+/*
+   Root design. Reusable values with var() to have consistency
+   Color Palette is taken from the movie poster 
+*/
+:root {
+  --ink: #17151c;
+  --ink-2: #221f2a;
+  --ink-3: #2d2934;
+  --ink-deep: #100f14;
+  --line: rgba(227, 203, 164, 0.16);
+
+  --cream: #fff4dc;
+  --sand: #cdab89;
+  --gold: #f4c678;
+
+  --orange: #f08a32;
+  --ember: #c45a34;
+  --spirit: #3fa9f5;
+  --spirit-light: #92fcff;
+
+  /* Font */
+  --font-display: "Archivo Black", "Arial Black", Impact, sans-serif;
+  --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --header-h: 72px;
+  --radius: 6px;
+}
+
+
+/* Bootstrap overrides */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--cream);
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--orange);
+  text-decoration: none;
+}
+
+/* Makes cards match dark theme bcs bootstrap cards are white by default */
+.card {
+  background: var(--ink-2);
+  color: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* Hide logo slots until a real image path is added (avoids broken-image text) */
+.logo[src=""],
+.footer-logo[src=""] {
+  display: none;
+}
+
+/* glowing things below the hero orange for Ichigo, blue for Yhwach */
+main {
+  background:
+    radial-gradient(60rem 30rem at 0% 110vh, rgba(240, 138, 50, 0.14), transparent 70%),
+    radial-gradient(55rem 28rem at 100% 190vh, rgba(63, 169, 245, 0.12), transparent 70%),
+    var(--ink);
+}
+
+main>.container {
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+}
+
+main section {
+  padding: 3rem 0;
+}
+
+/* Sticky header would cover the top of an anchor target; offset it */
+main section[id] {
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+}
+
+
+/* Header and nav */
+.top-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  /* above the carousel and hero */
+  min-height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding: 0.5rem clamp(1rem, 4vw, 3rem);
+  background: rgba(23, 21, 28, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Thin warm-to-cool line along the header's bottom edge */
+.top-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--orange), var(--gold) 45%, var(--spirit));
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.02em;
+}
+
+.logo {
+  height: 44px;
+  width: auto;
+}
+
+/* removes default padding of bootstrap navbar class */
+.navbar {
+  padding: 0;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list a {
+  position: relative;
+  display: inline-block;
+  padding: 0.4rem 0;
+  color: var(--cream);
+  font-weight: 500;
+}
+
+/* Underline that grows in on hover and stays on the current page */
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+/* Does a little animation when hovering on hamburger menu items */
+.nav-list a:hover,
+.nav-list a[aria-current="page"] {
+  color: var(--gold);
+}
+
+.nav-list a:hover::after,
+.nav-list a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* Hamburger button: hidden on desktop, shown on phones */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  /* comfortable tap size */
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--cream);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Bootstrap sets aria-expanded="true" when the menu is open: turn the bars into an X */
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  /* 7px = bar height + gap */
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Phones and small tablets (under 768px) */
+@media (max-width: 767.98px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Menu drops below the logo row at full width */
+  .top-header .main-nav {
+    flex: 0 0 100%;
+  }
+
+  /* Links stack vertically with a divider between them */
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0 1rem;
+  }
+
+  .nav-list a {
+    display: block;
+    padding: 0.8rem 0;
+    border-top: 1px solid var(--line);
+  }
+}
+
+/* Desktop (768px and up): menu is always visible, regardless of the collapse state */
+/* !important makes the declarations that they indicate win over any normal declaration. Almost like hierarchy. */
+@media (min-width: 768px) {
+  .top-header .main-nav {
+    display: block !important;
+    height: auto !important;
+  }
+}
+
+
+/* hero */
+.hero-section {
+  position: relative;
+  height: calc(100vh - var(--header-h));
+  min-height: 420px;
+  overflow: hidden;
+  background: var(--ink-2);
+  /* shows while the video loads */
+}
+
+.hero-section .background,
+.hero-vid {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-vid {
+  object-fit: cover;
+  /* crops to fill instead of distorting */
+  display: block;
+}
+
+/* Fades the bottom of the video into the page background (found similar on EVO website) */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(23, 21, 28, 0) 55%, var(--ink) 100%);
+  pointer-events: none;
+}
+
+
+/* Section title styling */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+.section-title::before {
+  content: "";
+  flex: none;
+  width: 0.7rem;
+  height: 1.5em;
+  background: var(--orange);
+}
+
+
+/* Information secton */
+.info-poster {
+  display: block;
+  width: 100%;
+}
+
+/* Right column stacks its content so the stills sit at the card's bottom */
+.info-card .col-md-8 {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card .card-body {
+  padding: 1.5rem 1.5rem 1rem;
+}
+
+.info-card .card-title {
+  font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+  color: var(--gold);
+}
+
+.info-details {
+  color: var(--sand);
+}
+
+.info-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: auto;
+  /* pushes the stills to the bottom of the card */
+  padding: 0 1.5rem 1.5rem;
+}
+
+.info-images img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--ink-3);
+}
+
+/* On phones the poster is full width and keeps it from getting too tall */
+@media (max-width: 767.98px) {
+  .info-poster {
+    max-height: 420px;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+
+/* Highlights carousel */
+
+/* This prevented the jumping that happened when clicking the buttons on the carousel*/
+.mov-highlights {
+  overflow-anchor: none;
+}
+
+.carousel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* All slides share one ratio so the carousel height never jumps */
+.carousel-item img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--ink-3);
+}
+
+/* Dark fade behind captions so the text stays readable on bright frames */
+.carousel-caption {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 3rem 4rem 1.75rem;
+  background: linear-gradient(to top, rgba(23, 21, 28, 0.92), transparent);
+}
+
+/* Indicator dots here
+   If filled with orange = Current slide
+*/
+.carousel-indicators li {
+  box-sizing: border-box;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  /* gap between dots */
+  border: 2px solid var(--cream);
+  /* replaces the default border of Bootstrap on top and bottom */
+  border-radius: 50%;
+  /* makes it a circle */
+  background-color: transparent;
+  opacity: 0.7;
+}
+
+.carousel-indicators .active {
+  border-color: var(--orange);
+  background-color: var(--orange);
+  opacity: 1;
+}
+
+/* Synopsis */
+.mov-synopsis p {
+  max-width: 60ch;
+  /* keeps lines readable */
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+/* Blue shadow/glow behind the image */
+.synopsis-img {
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 1px var(--line), 0 14px 44px rgba(63, 169, 245, 0.22);
+}
+
+
+/* VA and Characters Grid */
+/* Space between rows since Bootstrap columns only add side padding */
+.artists-grid>[class*="col-"] {
+  margin-bottom: 1.5rem;
+}
+
+.artist-card {
+  height: 100%;
+  /* cards in the same row match heights */
+}
+
+/* Featured VAs and Characters pics sit side by side */
 .artist-images {
   display: flex;
 }
 
-/* Each image takes half the card width */
+/* Half width per image to fill card */
 .artist-images img {
   width: 50%;
   aspect-ratio: 1 / 1;
-  /* keeps both images the same shape; change to 3 / 4 for portraits */
+  /* keeps both images square */
   object-fit: cover;
   /* crops to fill the box instead of stretching */
   display: block;
+}
+
+/* Divider */
+.artist-images .character-img {
+  border-left: 2px solid var(--orange);
+}
+
+.artist-card .card-body {
+  padding: 1rem 1.25rem;
+  border-top: 3px solid var(--orange);
+}
+
+.artist-name {
+  margin: 0 0 0.15rem;
+  font-size: 1.6rem;
+  color: var(--gold);
+}
+
+.artist-role {
+  margin: 0;
+  color: var(--sand);
+}
+
+
+/* Credits and cinema lists are same styled lists*/
+.credits-list,
+.cinema-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.credits-list li,
+.cinema-list li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Credits layout: Role | Name */
+.credits-list li {
+  display: flex;
+  gap: 1rem;
+}
+
+.credit-role {
+  flex: 0 0 11rem;
+  color: var(--sand);
+}
+
+.credit-name {
+  font-weight: 600;
+}
+
+/* Cinemas list layout: name | location | showtimes */
+.cinema-list li {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.5fr;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.cinema-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.cinema-times {
+  color: var(--spirit);
+  text-align: right;
+}
+
+@media (max-width: 575.98px) {
+  .credits-list li {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .cinema-list li {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .cinema-times {
+    text-align: left;
+  }
+}
+
+
+/* FOOTER */
+footer {
+  position: relative;
+  padding: 3.5rem 0 2rem;
+  background: var(--ink-deep);
+  color: var(--sand);
+}
+
+/* Gradient same as the header that includes most of the color palette */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--orange), var(--gold) 45%, var(--spirit));
+}
+
+/* 3 equal columns */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem 3rem;
+  align-items: start;
+  /* each column starts at the top */
+}
+
+@media (max-width: 575.98px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-columns h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+  color: var(--gold);
+}
+
+.footer-columns p {
+  margin: 0 0 0.3rem;
+}
+
+/* Column 1 */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.footer-logo {
+  height: 48px;
+  width: auto;
+}
+
+.footer-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--cream);
+}
+
+.socials-logo {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-link {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.social-link img {
+  width: 20px;
+  height: 20px;
+}
+
+.social-link:hover {
+  border-color: var(--orange);
+  background: rgba(240, 138, 50, 0.12);
+}
+
+/* Column 3 */
+.footer-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-links a {
+  color: var(--cream);
+}
+
+.footer-links a:hover {
+  color: var(--orange);
+}
+
+
+/* Accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--spirit-light);
+  outline-offset: 3px;
+}
+
+/* reduced motion is for people that have it activated. Takes away smooth scrolling */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+
+  .hero-vid {
+    display: none;
+  }
 }
