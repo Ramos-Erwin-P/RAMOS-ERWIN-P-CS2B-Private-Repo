@@ -981,6 +981,8 @@ main section[id] {
   color: var(--orange);
   font-size: 23px;
   margin: 0;
+  text-align: center;
+  width: 100%;
 }
 
 #close-cart {
