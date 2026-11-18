@@ -951,6 +951,22 @@ main section[id] {
   right: 0;
 }
 
+/* MOBILE CART PANEL */
+@media (max-width: 768px) {
+  .cart-panel {
+    top: 165px;
+    right: -100%;
+    width: 100%;
+    max-width: 100%;
+    height: calc(100dvh - 165px);
+    border-radius: 0;
+  }
+
+  .cart-panel.active {
+    right: 0;
+  }
+}
+
 /* CART HEADER */
 .cart-header {
   display: flex;
@@ -1860,13 +1876,6 @@ footer::before {
     font-size: 0.8rem;
   }
 
-   /* Move cart panel below the header */
-.cart-panel {
-    top: 100px;
-    height: calc(100vh - 100px);
-    overflow-y: auto;
-}
-
   /* ===================================== */
   /* FOOTER */
   /* ===================================== */
@@ -2017,14 +2026,6 @@ footer::before {
   }
 
 }
-
-@media (max-width: 768px) {
-    .cart-panel {
-        top: 80px;
-        height: calc(100dvh - 80px);
-    }
-}
-
 
 /* ===================================== */
 /* DESKTOP */
