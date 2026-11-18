@@ -831,7 +831,7 @@ main section[id] {
 /* FLOATING CART BUTTON */
 .cart-icon {
   position: fixed;
-  top: 105px;
+  top: 130px;
   right: 35px;
   z-index: 999;
   width: 58px;
