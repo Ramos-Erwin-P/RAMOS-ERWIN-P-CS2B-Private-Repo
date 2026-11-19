@@ -1228,15 +1228,15 @@ footer::before {
 }
 
 
-/* ===================================== */
+
 /* RESPONSIVE DESIGN */
-/* ===================================== */
 
 
-/* ===================================== */
-/* TABLETS AND SMALLER DEVICES */
-/* Maximum width: 767.98px */
-/* ===================================== */
+
+
+/* TABLETS AND SMALLER DEVICES (767.98px) */
+
+
 
 @media (max-width: 767.98px) {
 
@@ -1283,6 +1283,21 @@ footer::before {
     display: block;
     padding: 0.8rem 0;
     border-top: 1px solid var(--line);
+  }
+
+   .brand {
+    flex: 1 1 0;      /* takes the remaining space to allow shrinking below content width */
+    min-width: 0;     /* required so the flex children can shrink */
+  }
+
+  .brand h1 {
+    min-width: 0;
+    line-height: 1.15;
+  }
+
+  .nav-toggle {
+    flex: 0 0 auto;   /* never shrink or wrap */
+    margin-left: auto;
   }
 
 
@@ -1667,9 +1682,8 @@ footer::before {
   }
 
 
-  /* ===================================== */
   /* CHARACTERS PAGE */
-  /* ===================================== */
+
 
   .hero-section-char {
     min-height: 350px;
@@ -1761,9 +1775,9 @@ footer::before {
   }
 
 
-  /* ===================================== */
+
   /* PRODUCTS PAGE */
-  /* ===================================== */
+
 
   .shop-intro {
     padding: 45px 15px 35px;
@@ -1795,7 +1809,6 @@ footer::before {
 
   /*
      Bootstrap controls the actual column widths.
-     Your HTML uses col-12 col-sm-6 col-lg-3.
      On phones below 576px, products appear one per row.
   */
   .product-grid {
@@ -1878,9 +1891,9 @@ footer::before {
     font-size: 0.8rem;
   }
 
-  /* ===================================== */
+
   /* FOOTER */
-  /* ===================================== */
+
 
   .footer-grid {
     grid-template-columns: 1fr;
@@ -1903,13 +1916,10 @@ footer::before {
     margin-top: 1.75rem;
   }
 
-}
+
+/* VERY SMALL PHONES (380px) */
 
 
-/* ===================================== */
-/* VERY SMALL PHONES */
-/* Maximum width: 380px */
-/* ===================================== */
 
 @media (max-width: 380px) {
 
@@ -2030,9 +2040,9 @@ footer::before {
 
 }
 
-/* ===================================== */
+
 /* DESKTOP */
-/* ===================================== */
+
 
 @media (min-width: 768px) {
 
@@ -2045,10 +2055,7 @@ footer::before {
 }
 
 
-/* ===================================== */
-/* LARGE DESKTOP SCREENS */
-/* Minimum width: 1200px */
-/* ===================================== */
+/* LARGE DESKTOP SCREENS (1200px or more) */
 
 @media (min-width: 1200px) {
 
@@ -2065,3 +2072,4 @@ footer::before {
   }
 
 }
+
