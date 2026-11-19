@@ -1281,12 +1281,18 @@ footer::before {
 
   /* FEATURE PAGE HERO */
   .hero-section {
-    height: 65vh;
-    min-height: 350px;
+    height: auto;
+    min-height: 0;
+  }
+
+  .hero-section .background {
+    height: auto;
   }
 
   .hero-vid {
-    object-fit: cover;
+    height: auto;
+    aspect-ratio: 16 / 9;   /* match your video's real ratio */
+    object-fit: contain;    /* shows the whole video, no cropping */
   }
 
 
@@ -1535,14 +1541,6 @@ footer::before {
     width: 40px;
     height: 40px;
   }
-
-
-  /* FEATURE PAGE HERO */
-  .hero-section {
-    height: 55vh;
-    min-height: 300px;
-  }
-
 
   /* GENERAL SECTION SPACING */
   main > .container {
@@ -1881,12 +1879,6 @@ footer::before {
 
   .logo {
     height: 28px;
-  }
-
-
-  /* FEATURE PAGE */
-  .hero-section {
-    min-height: 280px;
   }
 
   .section-title {
