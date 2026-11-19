@@ -1,4 +1,3 @@
-
 /*
    Root design. Reusable values with var() to have consistency
    Color Palette is taken from the movie poster
@@ -28,9 +27,8 @@
 }
 
 
-/* ===================================== */
 /* GENERAL STYLING */
-/* ===================================== */
+
 
 /* Bootstrap overrides */
 html {
@@ -45,7 +43,10 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-display);
   font-weight: 700;
   line-height: 1.1;
@@ -62,7 +63,7 @@ a:hover {
   text-decoration: none;
 }
 
-/* Makes cards match dark theme bcs bootstrap cards are white by default */
+/* Makes cards match dark theme because Bootstrap cards are white by default */
 .card {
   background: var(--ink-2);
   color: var(--cream);
@@ -72,7 +73,8 @@ a:hover {
 }
 
 /* Hide logo slots until a real image path is added */
-.logo[src=""], .footer-logo[src=""] {
+.logo[src=""],
+.footer-logo[src=""] {
   display: none;
 }
 
@@ -99,9 +101,9 @@ main section[id] {
 }
 
 
-/* ===================================== */
+
 /* HEADER AND NAVIGATION */
-/* ===================================== */
+
 
 .top-header {
   position: sticky;
@@ -204,7 +206,7 @@ main section[id] {
   transform: scaleX(1);
 }
 
-/* Hamburger button */
+/* Hamburger button (hidden on desktop, shown in the mobile query) */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -242,9 +244,7 @@ main section[id] {
 }
 
 
-/* ===================================== */
 /* FEATURE PAGE */
-/* ===================================== */
 
 /* HERO SECTION */
 .hero-section {
@@ -475,66 +475,57 @@ main section[id] {
 }
 
 
-/* ===================================== */
 /* CHARACTERS PAGE */
-/* ===================================== */
 
-
-/* ===================================== */
-/* CHARACTERS PAGE - HERO SECTION */
-/* ===================================== */
-
+/* HERO SECTION */
 .hero-section-char {
-    position: relative;
-    width: 100%;
-    min-height: 450px;
-    padding: 100px 30px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(rgba(16, 15, 20, 0.65), rgba(16, 15, 20, 0.80)),
-        url("../../media/img/stills/bleach.jpg") center center / cover no-repeat;
-
-    text-align: center;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+  padding: 100px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(rgba(16, 15, 20, 0.65), rgba(16, 15, 20, 0.8)),
+    url("../../media/img/stills/bleach.jpg") center center / cover no-repeat;
+  text-align: center;
+  overflow: hidden;
 }
 
 /* Hero content */
 .hero-content-char {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* Hero heading */
 .hero-content-char h1 {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: clamp(2rem, 4vw, 2.625rem);
-    font-weight: 700;
-    margin-bottom: 1.25rem;
-    letter-spacing: 0.06em;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.625rem);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.06em;
 }
 
 /* Hero description */
 .hero-content-char p {
-    max-width: 750px;
-    margin: 0 auto 2rem;
-    font-size: 1.1rem;
-    line-height: 1.7;
+  max-width: 750px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 /* Hero navigation links */
 .hero-links-char {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .hero-btn-char {
@@ -556,7 +547,7 @@ main section[id] {
   transform: translateY(-3px);
 }
 
-/* CHARACTER SECTION */
+/* CHARACTER SECTIONS */
 #protagonists,
 #antagonists,
 #miscellaneous {
@@ -671,10 +662,8 @@ main section[id] {
   color: var(--spirit-light);
 }
 
-
-/* ===================================== */
 /* PRODUCTS PAGE */
-/* ===================================== */
+
 
 /* SHOP INTRO */
 .shop-intro {
@@ -893,7 +882,8 @@ main section[id] {
 }
 
 @keyframes notificationPulse {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 rgba(255, 48, 48, 0.5);
   }
 
@@ -937,7 +927,7 @@ main section[id] {
   width: 400px;
   max-width: 90%;
   height: calc(100vh - 110px);
-  height: calc(100vh - 110px);
+  height: calc(100dvh - 110px); /* modern browsers; the line above is the fallback */
   background: var(--ink-deep);
   color: var(--cream);
   padding: 25px;
@@ -958,6 +948,7 @@ main section[id] {
     right: -100%;
     width: 100%;
     max-width: 100%;
+    height: calc(100vh - 165px);
     height: calc(100dvh - 165px);
     border-radius: 0;
   }
@@ -1110,6 +1101,8 @@ main section[id] {
 
 
 /* FOOTER */
+
+
 footer {
   position: relative;
   padding: 3.5rem 0 2rem;
@@ -1226,14 +1219,12 @@ footer::before {
 }
 
 
-
 /* RESPONSIVE DESIGN */
+/* Order matters: widest query first, narrowest last */
 
 
 
-
-/* TABLETS AND SMALLER DEVICES (767.98px) */
-
+/* TABLETS AND SMALLER (max-width: 767.98px) */
 
 
 @media (max-width: 767.98px) {
@@ -1245,12 +1236,15 @@ footer::before {
   }
 
   .brand {
+    flex: 1 1 0;      /* takes the remaining space so it can shrink below content width */
+    min-width: 0;     /* required so flex children can shrink */
     gap: 0.5rem;
-    min-width: 0;
   }
 
   .brand h1 {
+    min-width: 0;
     font-size: 1.5rem;
+    line-height: 1.15;
   }
 
   .logo {
@@ -1259,7 +1253,8 @@ footer::before {
 
   .nav-toggle {
     display: flex;
-    flex-shrink: 0;
+    flex: 0 0 auto;   /* never shrink or wrap */
+    margin-left: auto;
   }
 
   .top-header .main-nav {
@@ -1281,21 +1276,6 @@ footer::before {
     display: block;
     padding: 0.8rem 0;
     border-top: 1px solid var(--line);
-  }
-
-   .brand {
-    flex: 1 1 0;      /* takes the remaining space to allow shrinking below content width */
-    min-width: 0;     /* required so the flex children can shrink */
-  }
-
-  .brand h1 {
-    min-width: 0;
-    line-height: 1.15;
-  }
-
-  .nav-toggle {
-    flex: 0 0 auto;   /* never shrink or wrap */
-    margin-left: auto;
   }
 
 
@@ -1365,26 +1345,23 @@ footer::before {
   }
 
 
-  /* ===================================== */
   /* CHARACTERS PAGE */
-  /* ===================================== */
-
   .hero-section-char {
     min-height: 380px;
     padding: 4rem 1.5rem;
     background-position: center;
   }
 
-  .hero-content {
+  .hero-content-char {
     max-width: 650px;
   }
 
-  .hero-content h1 {
+  .hero-content-char h1 {
     font-size: clamp(1.75rem, 5vw, 2.25rem);
     line-height: 1.2;
   }
 
-  .hero-content p {
+  .hero-content-char p {
     font-size: 1rem;
     max-width: 600px;
   }
@@ -1398,8 +1375,6 @@ footer::before {
     font-size: 0.875rem;
   }
 
-
-  /* CHARACTER SECTIONS */
   #protagonists,
   #antagonists,
   #miscellaneous {
@@ -1411,8 +1386,6 @@ footer::before {
     margin-bottom: 2rem;
   }
 
-
-  /* CHARACTER GRID AND CARDS */
   .char-grid > [class*="col"] {
     margin-bottom: 1.25rem;
   }
@@ -1440,10 +1413,7 @@ footer::before {
   }
 
 
-  /* ===================================== */
   /* PRODUCTS PAGE */
-  /* ===================================== */
-
   .shop-intro {
     padding: 60px 20px 40px;
   }
@@ -1531,10 +1501,7 @@ footer::before {
   }
 
 
-  /* ===================================== */
   /* FOOTER */
-  /* ===================================== */
-
   .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
@@ -1543,13 +1510,12 @@ footer::before {
   .footer-title {
     font-size: 1.5rem;
   }
-
 }
 
 
+/* MOBILE PHONES (max-width: 575.98px) */
 
-/* MOBILE PHONES */
-/* Maximum width: 575.98px */
+
 @media (max-width: 575.98px) {
 
   /* HEADER */
@@ -1679,25 +1645,23 @@ footer::before {
 
 
   /* CHARACTERS PAGE */
-
-
   .hero-section-char {
     min-height: 350px;
     padding: 3.5rem 1rem;
     background-position: center;
   }
 
-  .hero-content {
+  .hero-content-char {
     width: 100%;
   }
 
-  .hero-content h1 {
+  .hero-content-char h1 {
     font-size: clamp(1.5rem, 6vw, 1.9rem);
     line-height: 1.25;
     margin-bottom: 1rem;
   }
 
-  .hero-content p {
+  .hero-content-char p {
     font-size: 0.9rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -1717,8 +1681,6 @@ footer::before {
     text-align: center;
   }
 
-
-  /* CHARACTER SECTIONS */
   #protagonists,
   #antagonists,
   #miscellaneous {
@@ -1731,8 +1693,6 @@ footer::before {
     margin-bottom: 1.5rem;
   }
 
-
-  /* CHARACTER CARDS */
   .char-grid > [class*="col"] {
     margin-bottom: 1rem;
   }
@@ -1771,10 +1731,7 @@ footer::before {
   }
 
 
-
   /* PRODUCTS PAGE */
-
-
   .shop-intro {
     padding: 45px 15px 35px;
   }
@@ -1889,8 +1846,6 @@ footer::before {
 
 
   /* FOOTER */
-
-
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 1.75rem;
@@ -1911,10 +1866,10 @@ footer::before {
   .footer-copyright {
     margin-top: 1.75rem;
   }
+}
 
 
-/* VERY SMALL PHONES (380px) */
-
+/* VERY SMALL PHONES (max-width: 380px) */
 
 
 @media (max-width: 380px) {
@@ -1939,17 +1894,17 @@ footer::before {
   }
 
 
-  /* CHARACTER PAGE */
+  /* CHARACTERS PAGE */
   .hero-section-char {
     min-height: 320px;
     padding: 3rem 0.75rem;
   }
 
-  .hero-content h1 {
+  .hero-content-char h1 {
     font-size: 1.45rem;
   }
 
-  .hero-content p {
+  .hero-content-char p {
     font-size: 0.82rem;
   }
 
@@ -2033,25 +1988,23 @@ footer::before {
   .cart-summary h3 {
     font-size: 1.1rem;
   }
-
 }
 
 
-/* DESKTOP */
+/* DESKTOP (min-width: 768px) */
 
 
 @media (min-width: 768px) {
 
-  /* Keep desktop navigation visible */
+  /* Keep desktop navigation visible (overrides Bootstrap's .collapse) */
   .top-header .main-nav {
     display: block !important;
     height: auto !important;
   }
-
 }
 
+/* LARGE DESKTOP (min-width: 1200px) */
 
-/* LARGE DESKTOP SCREENS (1200px or more) */
 
 @media (min-width: 1200px) {
 
@@ -2066,6 +2019,4 @@ footer::before {
   .product-card > img {
     height: 260px;
   }
-
 }
-
